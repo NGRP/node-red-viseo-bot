@@ -1,0 +1,21 @@
+{
+    "server": {
+        "port": 3978,
+        "certificate":  false,
+        "host": "http://127.0.0.1"
+    },
+    "facebook": {
+        "pageToken" : ""
+    },
+    "microsoft": {
+        "bot" : {
+           "appId" : "",
+           "appPassword": ""
+        },
+        "luis" : {
+           "url" : "https://api.projectoxford.ai/luis/v1/application",
+           "modelId": "",
+           "APIKey":""
+        }
+    }
+}

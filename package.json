@@ -3,6 +3,7 @@
     "version"       : "0.0.1",
     "description"   : "A boilerplate for node-red-contrib-viseo",
     "dependencies"  : {
+        "node-red"    : "*",
         "node-red-contrib-viseo-api-ai"    : "*",
         "node-red-contrib-viseo-blink"     : "*",
         "node-red-contrib-viseo-botbuilder": "*",

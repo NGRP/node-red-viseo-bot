@@ -1,9 +1,5 @@
 {
-    "server": {
-        "port": 3978,
-        "certificate":  false,
-        "host": "http://127.0.0.1"
-    },
+
     "facebook": {
         "pageToken" : ""
     },

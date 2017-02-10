@@ -52,5 +52,6 @@ node_modules
 node-red/*
 start-custom.bat
 
+data/
 !data/config.json
 !data/node-red-config.js

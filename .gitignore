@@ -47,9 +47,10 @@ Thumbs.db
 # Project
 ##########################################
 
-node-red/*
+bin
 node_modules
+node-red/*
 start-custom.bat
-data/config-custom.json
-data/node-red-config-custom.js
-data/.node-red
+
+!data/config.json
+!data/node-red-config.js

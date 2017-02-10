@@ -54,4 +54,6 @@ start-custom.bat
 
 data/
 !data/config.json
+!data/README.md
 !data/node-red-config.js
+!data/certificate/

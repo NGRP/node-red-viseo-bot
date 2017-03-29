@@ -152,10 +152,9 @@ module.exports = {
     //    context.global.os
 
     functionGlobalContext: {
-        // os:require('os'),
-        // octalbonescript:require('octalbonescript'),
-        // jfive:require("johnny-five"),
-        // j5board:require("johnny-five").Board({repl:false})
+        tzModule: require('moment-timezone'),
+        xpathModule: require('xpath'),
+        domModule:   require('xmldom').DOMParser
     },
 
     // The following property can be used to order the categories in the editor
@@ -181,5 +180,41 @@ module.exports = {
             // Whether or not to include audit events in the log output
             audit: false
         }
-    }
+    },
+    // https://github.com/node-red/node-red/issues/610
+    // https://github.com/node-red/node-red/wiki/Design%3A-Editor-Themes
+    editorTheme: {
+        page: {
+            title: "VISEO Framework",
+            favicon: process.cwd()+"/theme/favicon.ico", 
+            css: process.cwd()+"/theme/viseo.css"
+        },
+        header: {
+            title: "VISEO Framework",
+            image: process.cwd()+"/theme/viseo_40x40.png", 
+            url: "http://bot.viseo.io" 
+        },
+        
+        deployButton: {
+            type:"simple",
+            label:"Save",
+            icon: process.cwd()+"/theme/v.png"
+        },
+        
+        menu: {
+            "menu-item-import-library": false,
+            "menu-item-export-library": false,
+            "menu-item-keyboard-shortcuts": false,
+            "menu-item-help": {
+                label: "VISEO Framework",
+                url: "http://bot.viseo.io"
+            }
+        },
+        
+        userMenu: true,
+        
+        login: {
+            image: process.cwd()+"/theme/viseo_256x256.png"
+        }        
+    },
 }

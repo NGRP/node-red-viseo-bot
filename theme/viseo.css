@@ -1,0 +1,22 @@
+A.deploy-button:hover,
+A.deploy-button {
+  background: #0088cc url("../deploy/v.png");
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+
+A.deploy-button:hover{
+    background-color: #0066AA;
+}
+
+A.deploy-button IMG {
+    display: none;
+}
+
+SPAN.deploy-button-content{
+    margin-left: 12px;
+}
+
+SPAN.logo     { margin-top: 0; }
+SPAN.logo IMG { height: 40px;  }
+

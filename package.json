@@ -3,7 +3,10 @@
     "version"       : "0.0.1",
     "description"   : "A boilerplate for node-red-contrib-viseo",
     "dependencies"  : {
-        "node-red"    : "*",
+        "moment-timezone"                  : "^0.5.11",
+        "xpath"                            : "^0.0.24",
+        "xmldom"                           : "^0.1.27",
+        "node-red-viseo-helper"            : "0.0.x",
         "node-red-contrib-viseo-api-ai"    : "0.0.x",
         "node-red-contrib-viseo-blink"     : "0.0.x",
         "node-red-contrib-viseo-botbuilder": "0.0.x",
@@ -17,8 +20,7 @@
         "node-red-contrib-viseo-phantomjs" : "0.0.x",
         "node-red-contrib-viseo-random"    : "0.0.x",
         "node-red-contrib-viseo-sensit"    : "0.0.x",
-        "node-red-contrib-viseo-socketio"  : "0.0.x",
-        "node-red-viseo-helper"            : "0.0.x"
+        "node-red-contrib-viseo-socketio"  : "0.0.x"
     },
     "repository" : {
         "type":"git",

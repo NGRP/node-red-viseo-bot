@@ -1,0 +1,4 @@
+{
+    "regexp.yes" : "oui|yes|o+u+i+",
+    "regexp.no"  : "non|no|n+o+n*"
+}

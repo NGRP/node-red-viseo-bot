@@ -57,3 +57,4 @@ data/
 !data/README.md
 !data/node-red-config.js
 !data/certificate/
+!data/locales/default.json

@@ -12,5 +12,8 @@
            "modelId": "",
            "APIKey":""
         }
+    },
+    "server": {
+        "host": ""
     }
 }

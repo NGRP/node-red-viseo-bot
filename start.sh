@@ -1,6 +1,7 @@
 #!/bin/bash
+NODE_TLS_REJECT_UNAUTHORIZED=0 \
 BOTBUILDER_CFG="{cwd}/data/config.json" \
 PORT=1880 \
-~/.nvm/versions/node/v6.6.0/lib/node_modules/pm2/bin/pm2 \
+pm2 \
 start \
-/home/pseudo/node-red-viseo-bot/node-red/red.js --name="Sample" -- -s ./data/node-red-config.js
+node-red/node-red-current/red.js --name="Sample" -- -s ./data/node-red-config.js

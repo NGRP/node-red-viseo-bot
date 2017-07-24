@@ -1,6 +1,6 @@
 {
     "name"          : "node-red-viseo-bot",
-    "version"       : "0.0.1",
+    "version"       : "0.0.2",
     "description"   : "A boilerplate for node-red-contrib-viseo",
     "dependencies"  : {
         "moment-timezone"                  : "^0.5.11",
@@ -18,7 +18,8 @@
         "node-red-contrib-viseo-log"       : "0.0.x",
         "node-red-contrib-viseo-ms-graph"  : "0.0.x",
         "node-red-contrib-viseo-ms-oxford" : "0.0.x",
-        "node-red-contrib-viseo-nedb"      : "0.0.x",
+        "node-red-contrib-viseo-nedb"      : "0.1.x",
+        "node-red-contrib-viseo-mongodb"   : "0.0.x",
         "node-red-contrib-viseo-phantomjs" : "0.0.x",
         "node-red-contrib-viseo-random"    : "0.0.x",
         "node-red-contrib-viseo-repeat"    : "0.0.x",

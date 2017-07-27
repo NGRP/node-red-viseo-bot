@@ -18,6 +18,7 @@
         "node-red-contrib-viseo-log"       : "0.0.x",
         "node-red-contrib-viseo-ms-graph"  : "0.0.x",
         "node-red-contrib-viseo-ms-oxford" : "0.0.x",
+        "node-red-contrib-viseo-nosql"     : "0.0.x",
         "node-red-contrib-viseo-nedb"      : "0.1.x",
         "node-red-contrib-viseo-mongodb"   : "0.0.x",
         "node-red-contrib-viseo-phantomjs" : "0.0.x",
@@ -25,8 +26,8 @@
         "node-red-contrib-viseo-repeat"    : "0.0.x",
         "node-red-contrib-viseo-sensit"    : "0.0.x",
         "node-red-contrib-viseo-socketio"  : "0.0.x",
-        "node-red-contrib-viseo-soundex"  : "0.0.x",
-        "node-red-contrib-viseo-tokenizer"  : "0.0.x"
+        "node-red-contrib-viseo-soundex"   : "0.0.x",
+        "node-red-contrib-viseo-tokenizer" : "0.0.x"
     },
     "repository" : {
         "type":"git",

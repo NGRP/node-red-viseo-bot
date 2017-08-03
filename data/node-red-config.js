@@ -152,9 +152,12 @@ module.exports = {
     //    context.global.os
 
     functionGlobalContext: {
-        tzModule: require('moment-timezone'),
+        tzModule:    require('moment-timezone'),
         xpathModule: require('xpath'),
-        domModule:   require('xmldom').DOMParser
+        domModule:   require('xmldom').DOMParser,
+        uuidv1:      require('uuid/v1'),
+        uuidv4:      require('uuid/v4'),
+        uuidv5:      require('uuid/v5')
     },
 
     // The following property can be used to order the categories in the editor

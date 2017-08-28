@@ -2,6 +2,8 @@
 
 initArgs() {
 
+	START="pm2"
+
 	for arg in "$@"; do
 		shift
 		case "$arg" in
@@ -9,7 +11,7 @@ initArgs() {
 			"--env") set -- "$@" "-e" ;;
 			"--url") set -- "$@" "-h" ;;
 			"--credential-secret") set -- "$@" "-s" ;;
-			"--no-daemon") set -- "$@" "-d";;
+			"--docker") set -- "$@" "-d";;
 			*) set -- "$@" "$arg" ;;
 		esac
 	done
@@ -30,7 +32,7 @@ initArgs() {
 			e) ENV="${OPTARG}";;
 			h) HOST="${OPTARG}";;
 			s) CREDENTIAL_SECRET="${OPTARG}";;
-			d) NO_DAEMON="--no-daemon";;
+			d) START="pm2-docker";;
 	 		:)
 	      		echo "Option -$OPTARG requires an argument." >&2
 	      		exit 1
@@ -41,6 +43,12 @@ initArgs() {
 	shift $(($OPTIND - 1))
 
 	APP="$1"
+	NAME=""
+
+	if [ $START == "pm2" ]
+	then
+		NAME="--name $APP"
+	fi
 }
 
 checkArgs() {
@@ -50,7 +58,7 @@ checkArgs() {
 		bold=$(tput bold)
 		normal=$(tput sgr0)
 
-		echo $bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --no-daemon ] --env [ dev|quali|prod ] [ --credential-secret passphrase ] app"$normal
+		echo $bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --env [ dev|quali|prod ] [ --credential-secret passphrase ] app"$normal
 		exit 1
 	fi
 }
@@ -72,6 +80,6 @@ HOST="$HOST" \
 PORT=$PORT \
 BOT_ROOT=$CUR_DIR \
 CREDENTIAL_SECRET=$CREDENTIAL_SECRET \
-pm2 \
+$START \
 start \
-"$SOURCE"/node_modules/node-red/red.js "$NO_DAEMON" --name=$APP -- -s "$SOURCE"/conf/node-red-config.js
+"$SOURCE"/node_modules/node-red/red.js $NAME -- -s "$SOURCE"/conf/node-red-config.js

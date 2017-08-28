@@ -18,7 +18,20 @@
 // to make it available:
 //var fs = require("fs");
 
-module.exports = {
+const extend = require('extend');
+const config = require(process.env.CONFIG_PATH)[process.env.NODE_ENV] || { admin: {users: []}};
+
+
+let settings = {
+    storageModule: require("node-red-viseo-storage-plugin"),
+    credentialsFile: 'flows_cred_' + process.env.NODE_ENV + '.json'
+};
+
+if(process.env.CREDENTIAL_SECRET) {
+    settings.credentialSecret = process.env.CREDENTIAL_SECRET;
+}
+
+module.exports = extend(settings, true, {
     // the tcp port that the Node-RED web server is listening on
     uiPort: process.env.PORT || 1880,
 
@@ -54,13 +67,21 @@ module.exports = {
     //  property to true:
     flowFilePretty: true,
 
+    // By default, credentials are encrypted in storage using a generated key. To
+    // specify your own secret, set the following property.
+    // If you want to disable encryption of credentials, set this property to false.
+    // Note: once you set this property, do not change it - doing so will prevent
+    // node-red from being able to decrypt your existing credentials and they will be
+    // lost.
+    //credentialSecret: "a-secret-key",
+
     // By default, all user data is stored in the Node-RED install directory. To
     // use a different location, the following property can be used
-    userDir: './data/',
+    userDir: process.env.BOT_ROOT + '/data/',
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
-    nodesDir: process.cwd()+'/node-red-contrib',
+    //nodesDir: process.env.BOT_ROOT +'/node-red-contrib',
 
     // By default, the Node-RED UI is available at http://localhost:1880/
     // The following property can be used to specifiy a different root path.
@@ -80,7 +101,16 @@ module.exports = {
     // When httpAdminRoot is used to move the UI to a different root path, the
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
-    httpStatic: process.cwd() + '/webapp',
+    httpStatic: process.env.BOT_ROOT + '/webapp',
+
+    // The maximum size of HTTP request that will be accepted by the runtime api.
+    // Default: 5mb
+    //apiMaxLength: '5mb',
+
+    // If you installed the optional node-red-dashboard you can set it's path
+    // relative to httpRoot
+    //ui: { path: "ui" },
+
 
     // Securing Node-RED
     // -----------------
@@ -89,11 +119,7 @@ module.exports = {
     
     adminAuth: {
         type: "credentials",
-        users: [{
-            username: "demo",
-            password: "$2a$08$dxKDMZrgCSSJuiKW2gxZoeas6AjmWi5oV1GM4pXis9z8p54p4/Xiq", // loremipsum
-            permissions: "*"
-        }]
+        users: config.admin.users || []
     },
 
     // To password protect the node-defined HTTP endpoints (httpNodeRoot), or
@@ -113,6 +139,10 @@ module.exports = {
     //    key: fs.readFileSync('privatekey.pem'),
     //    cert: fs.readFileSync('certificate.pem')
     //},
+
+    // The following property can be used to cause insecure HTTP connections to
+    // be redirected to HTTPS.
+    //requireHttps: true
 
     // The following property can be used to disable the editor. The admin API
     // is not affected by this option. To disable both the editor and the admin
@@ -139,9 +169,29 @@ module.exports = {
     // in front of all http in nodes. This allows custom authentication to be
     // applied to all http in nodes, or any other sort of common request processing.
     //httpNodeMiddleware: function(req,res,next) {
-    //   // Handle/reject the request, or pass it on to the http in node
-    //   // by calling next();
-    //   next();
+    //    // Handle/reject the request, or pass it on to the http in node by calling next();
+    //    // Optionally skip our rawBodyParser by setting this to true;
+    //    //req.skipRawBodyParser = true;
+    //    next();
+    //},
+
+    // The following property can be used to verify websocket connection attempts.
+    // This allows, for example, the HTTP request headers to be checked to ensure
+    // they include valid authentication information.
+    //webSocketNodeVerifyClient: function(info) {
+    //    // 'info' has three properties:
+    //    //   - origin : the value in the Origin header
+    //    //   - req : the HTTP request
+    //    //   - secure : true if req.connection.authorized or req.connection.encrypted is set
+    //    //
+    //    // The function should return true if the connection should be accepted, false otherwise.
+    //    //
+    //    // Alternatively, if this function is defined to accept a second argument, callback,
+    //    // it can be used to verify the client asynchronously.
+    //    // The callback takes three arguments:
+    //    //   - result : boolean, whether to accept the connection or not
+    //    //   - code : if result is false, the HTTP error status to return
+    //    //   - reason: if result is false, the HTTP reason string to return
     //},
 
     // Anything in this hash is globally available to all functions.
@@ -189,19 +239,19 @@ module.exports = {
     editorTheme: {
         page: {
             title: "VISEO Framework",
-            favicon: process.cwd()+"/theme/favicon.ico", 
-            css: process.cwd()+"/theme/viseo.css"
+            favicon: process.env.FRAMEWORK_ROOT + "/theme/favicon.ico", 
+            css: process.env.FRAMEWORK_ROOT + "/theme/viseo.css"
         },
         header: {
             title: "VISEO Framework",
-            image: process.cwd()+"/theme/viseo_40x40.png", 
+            image: process.env.FRAMEWORK_ROOT + "/theme/viseo_40x40.png", 
             url: "http://bot.viseo.io" 
         },
         
         deployButton: {
             type:"simple",
             label:"Save",
-            icon: process.cwd()+"/theme/v.png"
+            icon: process.env.FRAMEWORK_ROOT + "/theme/v.png"
         },
         
         menu: {
@@ -217,7 +267,7 @@ module.exports = {
         userMenu: true,
         
         login: {
-            image: process.cwd()+"/theme/viseo_256x256.png"
+            image: process.env.FRAMEWORK_ROOT + "/theme/viseo_256x256.png"
         }        
     },
-}
+});

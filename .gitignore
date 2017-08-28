@@ -49,11 +49,4 @@ Thumbs.db
 
 bin
 node_modules
-node-red/*
-start-custom.bat
 
-data/
-!data/config.json
-!data/README.md
-!data/node-red-config.js
-!data/locales/default.json

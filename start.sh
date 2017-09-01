@@ -66,8 +66,9 @@ checkArgs() {
 initArgs "$@"
 checkArgs
 
+bot_content=`ls -A "$CUR_DIR"`
 
-if [ -z "$(ls -A $CUR_DIR)" ]
+if [ -z "$bot_content" ]
 then
 	bash "$SOURCE/create_template.sh"
 fi

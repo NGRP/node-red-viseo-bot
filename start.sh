@@ -70,7 +70,7 @@ bot_content=`ls -A "$CUR_DIR"`
 
 if [ -z "$bot_content" ]
 then
-	bash "$SOURCE/create_template.sh"
+	bash "$SOURCE"/create_template.sh "$CUR_DIR"
 fi
 
 NODE_ENV=$ENV \

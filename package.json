@@ -26,7 +26,7 @@
         "node-red-contrib-viseo-qrcode": "0.0.x",
         "node-red-contrib-viseo-random": "0.1.x",
         "node-red-contrib-viseo-repeat": "0.1.x",
-        "node-red-contrib-viseo-sarah": "0.1.x",
+        "node-red-contrib-viseo-sarah": "0.0.x",
         "node-red-contrib-viseo-sensit": "0.0.x",
         "node-red-contrib-viseo-socketio": "0.0.x",
         "node-red-contrib-viseo-soundex": "0.0.x",

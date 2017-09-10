@@ -19,6 +19,7 @@
 //var fs = require("fs");
 
 const extend = require('extend');
+const path   = require('path');
 const config = require(process.env.CONFIG_PATH)[process.env.NODE_ENV] || { admin: {users: []}};
 
 
@@ -77,11 +78,11 @@ module.exports = extend(settings, true, {
 
     // By default, all user data is stored in the Node-RED install directory. To
     // use a different location, the following property can be used
-    userDir: process.env.BOT_ROOT + '/data/',
+    userDir: path.normalize(process.env.BOT_ROOT + '/data/'),
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
-    //nodesDir: process.env.BOT_ROOT +'/node-red-contrib',
+    nodesDir: path.normalize(process.env.BOT_ROOT +'/node_modules'),
 
     // By default, the Node-RED UI is available at http://localhost:1880/
     // The following property can be used to specifiy a different root path.
@@ -101,7 +102,7 @@ module.exports = extend(settings, true, {
     // When httpAdminRoot is used to move the UI to a different root path, the
     // following property can be used to identify a directory of static content
     // that should be served at http://localhost:1880/.
-    httpStatic: process.env.BOT_ROOT + '/webapp',
+    httpStatic: path.normalize(process.env.BOT_ROOT + '/webapp'),
 
     // The maximum size of HTTP request that will be accepted by the runtime api.
     // Default: 5mb
@@ -239,19 +240,19 @@ module.exports = extend(settings, true, {
     editorTheme: {
         page: {
             title: "VISEO Framework",
-            favicon: process.env.FRAMEWORK_ROOT + "/theme/favicon.ico", 
-            css: process.env.FRAMEWORK_ROOT + "/theme/viseo.css"
+            favicon: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/favicon.ico"), 
+            css: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/viseo.css")
         },
         header: {
             title: "VISEO Framework",
-            image: process.env.FRAMEWORK_ROOT + "/theme/viseo_40x40.png", 
+            image: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/viseo_40x40.png"), 
             url: "http://bot.viseo.io" 
         },
         
         deployButton: {
             type:"simple",
             label:"Save",
-            icon: process.env.FRAMEWORK_ROOT + "/theme/v.png"
+            icon: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/v.png")
         },
         
         menu: {
@@ -267,7 +268,7 @@ module.exports = extend(settings, true, {
         userMenu: true,
         
         login: {
-            image: process.env.FRAMEWORK_ROOT + "/theme/viseo_256x256.png"
+            image: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/viseo_256x256.png")
         }        
     },
 });

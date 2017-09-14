@@ -33,6 +33,7 @@ if(process.env.CREDENTIAL_SECRET) {
 }
 
 module.exports = extend(settings, true, {
+
     // the tcp port that the Node-RED web server is listening on
     uiPort: process.env.PORT || 1880,
 
@@ -208,7 +209,8 @@ module.exports = extend(settings, true, {
         domModule:   require('xmldom').DOMParser,
         uuidv1:      require('uuid/v1'),
         uuidv4:      require('uuid/v4'),
-        uuidv5:      require('uuid/v5')
+        uuidv5:      require('uuid/v5'),
+        CONFIG:      require('node-red-viseo-helper').CONFIG 
     },
 
     // The following property can be used to order the categories in the editor

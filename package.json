@@ -1,6 +1,6 @@
 {
     "name": "node-red-viseo-bot",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "A boilerplate for node-red-contrib-viseo",
     "dependencies": {
         "moment-timezone"                      : "~0.5.11",
@@ -8,6 +8,7 @@
         "node-red-contrib-viseo-api-ai"        : "~0.0",
         "node-red-contrib-viseo-bear"          : "~0.0",
         "node-red-contrib-viseo-blink"         : "~0.0",
+        "node-red-contrib-viseo-bot-message"   : "~0.0",
         "node-red-contrib-viseo-botbuilder"    : "~0.4",
         "node-red-contrib-viseo-ffmpeg"        : "~0.0",
         "node-red-contrib-viseo-file"          : "~0.0",

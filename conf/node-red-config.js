@@ -243,7 +243,7 @@ module.exports = extend(settings, true, {
         page: {
             title: "VISEO Framework",
             favicon: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/favicon.ico"), 
-            css: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/viseo.css")
+            css: path.normalize(process.env.FRAMEWORK_ROOT + (process.env.NODE_ENV == 'prod' ? "/theme/viseo_prod.css" : "/theme/viseo.css"))
         },
         header: {
             title: "VISEO Framework",

@@ -1,0 +1,37 @@
+#header {
+	background-color: #CC0000;
+	color:#FFFFFF;
+}
+#header .button {
+	border-color: #8B0000;
+}
+#header #btn-deploy.disabled:hover,
+#header #btn-deploy.disabled {
+	background-color: #8B0000;
+	color:#eeeeee !important;
+}
+
+#header a.deploy-button:hover,
+#header a.deploy-button {
+  background: #0088cc url("../deploy/v.png");
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+
+#header a.deploy-button
+#header a.deploy-button:hover{
+    background-color: #0066AA;
+}
+
+#header a.deploy-button img {
+    display: none;
+}
+
+#header span.deploy-button-content{
+    margin-left: 12px;
+}
+
+#header span.logo     { margin-top: 0; }
+#header span.logo img { height: 40px;  }
+
+

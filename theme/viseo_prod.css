@@ -34,4 +34,8 @@
 #header span.logo     { margin-top: 0; }
 #header span.logo img { height: 40px;  }
 
-
+#header span.logo a:after {
+	content : " PROD ";
+	font-size:16px;
+	vertical-align: middle;
+}

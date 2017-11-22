@@ -32,6 +32,7 @@
         "node-red-contrib-viseo-phantomjs": "~0.1",
         "node-red-contrib-viseo-qrcode": "~0.1",
         "node-red-contrib-viseo-random": "~0.2",
+        "node-red-contrib-viseo-recast": "~0.0",
         "node-red-contrib-viseo-repeat": "~0.2",
         "node-red-contrib-viseo-salesforce": "~0.0",
         "node-red-contrib-viseo-sarah": "~0.1",

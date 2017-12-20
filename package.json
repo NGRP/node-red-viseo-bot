@@ -5,6 +5,7 @@
     "dependencies": {
         "moment-timezone": "~0.5.11",
         "node-red": "~0.17.5",
+        "node-red-contrib-viseo-amazon": "~0.0",
         "node-red-contrib-viseo-api-ai": "~0.2",
         "node-red-contrib-viseo-bear": "~0.1",
         "node-red-contrib-viseo-blink": "~0.0",

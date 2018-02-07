@@ -20,7 +20,7 @@
         "node-red-contrib-viseo-filter": "~0.0",
         "node-red-contrib-viseo-google-authentication": "~0.0",
         "node-red-contrib-viseo-google-speech": "~0.1",
-        "node-red-contrib-viseo-google-spreadsheet": "~0.1",
+        "node-red-contrib-viseo-google-spreadsheet": "~0.2",
         "node-red-contrib-viseo-help": "~0.1",
         "node-red-contrib-viseo-inbenta": "~0.0",
         "node-red-contrib-viseo-jimp": "~0.1",

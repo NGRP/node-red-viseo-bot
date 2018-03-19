@@ -27,7 +27,7 @@
         "node-red-contrib-viseo-jimp": "~0.1",
         "node-red-contrib-viseo-log": "~0.1",
         "node-red-contrib-viseo-loop": "~0.2",
-        "node-red-contrib-viseo-mongodb": "~0.2",
+        "node-red-contrib-viseo-mongodb": "~0.3",
         "node-red-contrib-viseo-ms-graph": "~0.2",
         "node-red-contrib-viseo-ms-oxford": "~0.1",
         "node-red-contrib-viseo-nedb": "~0.3",

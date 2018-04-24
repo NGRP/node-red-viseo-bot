@@ -42,7 +42,7 @@
         "node-red-contrib-viseo-salesforce": "~0.1",
         "node-red-contrib-viseo-sarah": "~0.1",
         "node-red-contrib-viseo-sensit": "~0.0",
-        "node-red-contrib-viseo-socketio": "~0.0",
+        "node-red-contrib-viseo-socketio": "~0.1",
         "node-red-contrib-viseo-soundex": "~0.1",
         "node-red-contrib-viseo-tokenizer": "~0.1",
         "node-red-contrib-viseo-trello": "~0.1",

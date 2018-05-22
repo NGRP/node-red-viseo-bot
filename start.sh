@@ -11,13 +11,15 @@ initArgs() {
 			"--env") set -- "$@" "-e" ;;
 			"--url") set -- "$@" "-h" ;;
 			"--credential-secret") set -- "$@" "-s" ;;
-			"--docker") set -- "$@" "-d";;
+			"--docker") set -- "$@" "-d" ;;
+			"--log-path") set -- "$@" "-l" ;;
 			*) set -- "$@" "$arg" ;;
 		esac
 	done
 
 	local OPTIND=1
 	PORT=1880
+	
 
 	SOURCE="$(dirname "${BASH_SOURCE[0]}")"
 	CUR_DIR="`pwd`"
@@ -25,7 +27,7 @@ initArgs() {
 	SOURCE="`pwd`"
 	cd "$CUR_DIR"
 
-	while getopts p:e:h:s:d option
+	while getopts p:e:l:h:s:d option
 	do
 		case "$option" in
 			p) PORT="${OPTARG}";;
@@ -33,6 +35,7 @@ initArgs() {
 			h) HOST="${OPTARG}";;
 			s) CREDENTIAL_SECRET="${OPTARG}";;
 			d) START="pm2-docker";;
+			l) LOG_PATH="${OPTARG}";;
 	 		:)
 	      		echo "Option -$OPTARG requires an argument." >&2
 	      		exit 1
@@ -58,7 +61,7 @@ checkArgs() {
 		bold=$(tput bold)
 		normal=$(tput sgr0)
 
-		echo $bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --env [ dev|quali|prod ] [ --credential-secret passphrase ] app"$normal
+		echo $bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --env [ dev|quali|prod ] [ --log-path pathtologs ] [ --credential-secret passphrase ] app"$normal
 		exit 1
 	fi
 }
@@ -73,6 +76,13 @@ then
 	bash "$SOURCE"/create_template.sh "$CUR_DIR"
 fi
 
+if [ -z "$LOG_PATH" ]
+then
+	LOG_PATH=""
+else
+	LOG_PATH="-o $LOG_PATH/$APP.out.log -e $LOG_PATH/$APP.err.log"
+fi
+
 NODE_ENV=$ENV \
 NODE_TLS_REJECT_UNAUTHORIZED=0 \
 CONFIG_PATH="$CUR_DIR/conf/config.js" \
@@ -83,4 +93,4 @@ BOT_ROOT=$CUR_DIR \
 CREDENTIAL_SECRET=$CREDENTIAL_SECRET \
 $START \
 start \
-"$SOURCE"/node_modules/node-red/red.js $NAME -- -s "$SOURCE"/conf/node-red-config.js
+"$SOURCE"/node_modules/node-red/red.js $LOG_PATH $NAME -- -s "$SOURCE"/conf/node-red-config.js

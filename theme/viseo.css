@@ -20,3 +20,16 @@ SPAN.deploy-button-content{
 SPAN.logo     { margin-top: 0; }
 SPAN.logo IMG { height: 40px;  }
 
+
+/* Disable open project */
+#header .header-toolbar ul#menu-item-projects-menu-submenu li:nth-child(2) {
+	display: none;
+}
+
+#projects-dialog .projects-dialog-screen-create-type[data-type="open"] {
+	display:none;
+}
+
+#projects-dialog .projects-dialog-screen-create-type[data-type="empty"] {
+	border-left: 1px solid #ccc !important;
+}

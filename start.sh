@@ -13,6 +13,7 @@ initArgs() {
 			"--credential-secret") set -- "$@" "-s" ;;
 			"--docker") set -- "$@" "-d" ;;
 			"--log-path") set -- "$@" "-l" ;;
+			"--bot") set -- "$@" "-b" ;;
 			*) set -- "$@" "$arg" ;;
 		esac
 	done
@@ -27,7 +28,7 @@ initArgs() {
 	SOURCE="`pwd`"
 	cd "$CUR_DIR"
 
-	while getopts p:e:l:h:s:d option
+	while getopts p:e:l:h:s:b:d option
 	do
 		case "$option" in
 			p) PORT="${OPTARG}";;
@@ -36,6 +37,7 @@ initArgs() {
 			s) CREDENTIAL_SECRET="${OPTARG}";;
 			d) START="pm2-docker";;
 			l) LOG_PATH="${OPTARG}";;
+			b) BOT="${OPTARG}";;
 	 		:)
 	      		echo "Option -$OPTARG requires an argument." >&2
 	      		exit 1
@@ -52,16 +54,24 @@ initArgs() {
 	then
 		NAME="--name $APP"
 	fi
+
+	if [ -z "$LOG_PATH" ]
+	then
+		LOG_PATH=""
+	else
+		LOG_PATH="-o $LOG_PATH/$APP.out.log -e $LOG_PATH/$APP.err.log"
+	fi
+
 }
 
 checkArgs() {
-	if [ -z "$APP" ] || [ -z "$ENV" ]
+	if [ -z "$APP" ] || [ -z "$ENV" ] || [ -z "$BOT" ]
 	then
 
 		bold=$(tput bold)
 		normal=$(tput sgr0)
 
-		echo $bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --env [ dev|quali|prod ] [ --log-path pathtologs ] [ --credential-secret passphrase ] app"$normal
+		echo $bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --bot [ botfoldername ] --env [ dev|quali|prod ] [ --log-path pathtologs ] [ --credential-secret passphrase ] app"$normal
 		exit 1
 	fi
 }
@@ -69,27 +79,18 @@ checkArgs() {
 initArgs "$@"
 checkArgs
 
-bot_content=`ls -A "$CUR_DIR"`
-
-if [ -z "$bot_content" ]
-then
-	bash "$SOURCE"/create_template.sh "$CUR_DIR"
-fi
-
-if [ -z "$LOG_PATH" ]
-then
-	LOG_PATH=""
-else
-	LOG_PATH="-o $LOG_PATH/$APP.out.log -e $LOG_PATH/$APP.err.log"
-fi
+cd "projects/$BOT"
+BOT_ROOT=`pwd`
+cd "$CUR_DIR"
 
 NODE_ENV=$ENV \
 NODE_TLS_REJECT_UNAUTHORIZED=0 \
-CONFIG_PATH="$CUR_DIR/conf/config.js" \
+CONFIG_PATH="$BOT_ROOT/conf/config.js" \
 FRAMEWORK_ROOT="$SOURCE" \
 HOST="$HOST" \
 PORT=$PORT \
-BOT_ROOT=$CUR_DIR \
+BOT="$BOT" \
+BOT_ROOT=$BOT_ROOT \
 CREDENTIAL_SECRET=$CREDENTIAL_SECRET \
 $START \
 start \

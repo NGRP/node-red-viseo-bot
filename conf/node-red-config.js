@@ -20,17 +20,33 @@
 
 const extend = require('extend');
 const path   = require('path');
-const config = require(process.env.CONFIG_PATH)[process.env.NODE_ENV] || { admin: {users: []}};
+
+const defaultUsers = [
+    {
+        "username": "demo",
+        "password": "$2a$08$dxKDMZrgCSSJuiKW2gxZoeas6AjmWi5oV1GM4pXis9z8p54p4/Xiq",
+        "permissions": "*"
+    }
+];
+
+
+let config = { admin: {users: defaultUsers}};
+
+try {
+    config = require(process.env.CONFIG_PATH)[process.env.NODE_ENV] || { admin: {users: defaultUsers}};
+} catch(e) {
+    console.log("no project config file found");
+}
 
 
 let settings = {
-    storageModule: require("node-red-viseo-storage-plugin"),
-    credentialsFile: 'flows_cred_' + process.env.NODE_ENV + '.json'
+    storageModule: require("node-red-viseo-storage-plugin")
 };
 
 if(process.env.CREDENTIAL_SECRET) {
     settings.credentialSecret = process.env.CREDENTIAL_SECRET;
 }
+
 
 module.exports = extend(settings, true, {
 
@@ -62,6 +78,18 @@ module.exports = extend(settings, true, {
     // The maximum length, in characters, of any message sent to the debug sidebar tab
     debugMaxLength: 1000,
 
+    // The maximum number of messages nodes will buffer internally as part of their
+    // operation. This applies across a range of nodes that operate on message sequences.
+    //  defaults to no limit. A value of 0 also means no limit is applied.
+    //nodeMaxMessageBufferLength: 0,
+
+    // To disable the option for using local files for storing keys and certificates in the TLS configuration
+    //  node, set this to true
+    //tlsConfigDisableLocalFiles: true,
+
+    // Colourise the console output of the debug node
+    debugUseColors: true,
+
     // The file containing the flows. If not set, it defaults to flows_<hostname>.json
     flowFile: 'flows.json',
 
@@ -79,11 +107,11 @@ module.exports = extend(settings, true, {
 
     // By default, all user data is stored in the Node-RED install directory. To
     // use a different location, the following property can be used
-    userDir: path.normalize(process.env.BOT_ROOT + '/data/'),
+    userDir: path.join(process.env.FRAMEWORK_ROOT, '..'),
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
-    nodesDir: path.normalize(process.env.BOT_ROOT +'/node_modules'),
+    nodesDir: path.normalize(process.env.BOT_ROOT, 'data/node_modules'),
 
     // By default, the Node-RED UI is available at http://localhost:1880/
     // The following property can be used to specifiy a different root path.
@@ -230,7 +258,7 @@ module.exports = extend(settings, true, {
             // info - record information about the general running of the application + warn + error + fatal errors
             // debug - record information which is more verbose than info + info + warn + error + fatal errors
             // trace - record very detailed logging + debug + info + warn + error + fatal errors
-            level: "info",
+            level: process.env.NODE_ENV === "dev" ? "debug" : "info",
             // Whether or not to include metric events in the log output
             metrics: false,
             // Whether or not to include audit events in the log output
@@ -240,13 +268,19 @@ module.exports = extend(settings, true, {
     // https://github.com/node-red/node-red/issues/610
     // https://github.com/node-red/node-red/wiki/Design%3A-Editor-Themes
     editorTheme: {
+        projects: {
+            enabled: true, // To enable the Projects feature, set this value to true
+            createDefaultFromZip: "https://github.com/NGRP/viseo-bot-template/archive/migration-nodered-0.18.zip",
+            packageDir: 'data/',
+            activeProject: process.env.BOT
+        },
         page: {
-            title: "VISEO Framework",
+            title: "VISEO Framework - "+process.env.BOT.replace(/[-_\.]/g, ' '),
             favicon: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/favicon.ico"), 
             css: path.normalize(process.env.FRAMEWORK_ROOT + (process.env.NODE_ENV == 'prod' ? "/theme/viseo_prod.css" : "/theme/viseo.css"))
         },
         header: {
-            title: "VISEO Framework",
+            title: "VISEO Framework - "+process.env.BOT.replace(/[-_\.]/g, ' '),
             image: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/viseo_40x40.png"), 
             url: "http://bot.viseo.io" 
         },

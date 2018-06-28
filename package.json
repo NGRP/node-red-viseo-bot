@@ -1,10 +1,10 @@
 {
     "name": "node-red-viseo-bot",
-    "version": "0.0.7",
+    "version": "0.1.0",
     "description": "A boilerplate for node-red-contrib-viseo",
     "dependencies": {
         "moment-timezone": "~0.5.11",
-        "node-red": "~0.17.5",
+        "node-red": "~0.18.7",
         "node-red-contrib-viseo-amazon": "~0.0",
         "node-red-contrib-viseo-api-ai": "~0.2",
         "node-red-contrib-viseo-aws": "~0.0",

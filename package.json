@@ -46,7 +46,7 @@
         "node-red-contrib-viseo-soundex": "~0.1",
         "node-red-contrib-viseo-sox": "~0.0",
         "node-red-contrib-viseo-tokenizer": "~0.1",
-        "node-red-contrib-viseo-trello": "~0.1",
+        "node-red-contrib-viseo-trello": "~0.2",
         "node-red-contrib-viseo-wechat": "~0.1",
         "node-red-viseo-bot-manager": "~0.0",
         "node-red-viseo-helper": "~0.1",

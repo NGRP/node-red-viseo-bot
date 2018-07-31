@@ -25,7 +25,8 @@ const config = require(process.env.CONFIG_PATH)[process.env.NODE_ENV] || { admi
 
 let settings = {
     storageModule: require("node-red-viseo-storage-plugin"),
-    credentialsFile: 'flows_cred_' + process.env.NODE_ENV + '.json'
+    credentialsFile: 'flows_cred_' + process.env.NODE_ENV + '.json',
+    httpNodeMiddleware: require('node-red-viseo-middleware')()
 };
 
 if(process.env.CREDENTIAL_SECRET) {

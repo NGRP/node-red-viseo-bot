@@ -1,4 +1,10 @@
 #!/bin/bash
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+orange=$(tput setaf 208)
+red=$(tput setaf 1)
+nocolor=$(tput sgr0)
 
 initArgs() {
 
@@ -65,13 +71,14 @@ initArgs() {
 }
 
 checkArgs() {
-	if [ -z "$APP" ] || [ -z "$ENV" ] || [ -z "$BOT" ]
+	if [ -z "$BOT" ]; then
+		echo $orange"Warning - "$nocolor$bold"No bot specified"$normal
+	fi
+
+	if [ -z "$APP" ] || [ -z "$ENV" ]
 	then
 
-		bold=$(tput bold)
-		normal=$(tput sgr0)
-
-		echo $bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --bot [ botfoldername ] --env [ dev|quali|prod ] [ --log-path pathtologs ] [ --credential-secret passphrase ] app"$normal
+		echo $red"Error - "$nocolor$bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --bot [ botfoldername ] --env [ dev|quali|prod ] [ --log-path pathtologs ] [ --credential-secret passphrase ] app"$normal
 		exit 1
 	fi
 }
@@ -79,9 +86,26 @@ checkArgs() {
 initArgs "$@"
 checkArgs
 
-cd "projects/$BOT"
-BOT_ROOT=`pwd`
+if [[ -n $BOT ]]; then
+	if [[ ! -d "projects/$BOT" ]]; then
+		echo $red"Error - "$nocolor$bold"Bot could not be started because source folder doesn't exist. Please create the project on the WEB interface first."$normal
+		exit 2
+	else
+		cd "projects/$BOT"
+		BOT_ROOT=`pwd`
+
+		if [[ ! -d "$BOT_ROOT"/data/node_modules ]]; then
+			cd data
+			npm install
+		fi
+	fi
+fi
+
+
+
 cd "$CUR_DIR"
+
+
 
 NODE_ENV=$ENV \
 NODE_TLS_REJECT_UNAUTHORIZED=0 \

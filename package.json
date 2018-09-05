@@ -4,7 +4,7 @@
     "description": "A boilerplate for node-red-contrib-viseo",
     "dependencies": {
         "moment-timezone": "~0.5.11",
-        "node-red": "~0.18.7",
+        "node-red": "^0.19.2",
         "node-red-contrib-viseo-amazon": "~0.0",
         "node-red-contrib-viseo-api-ai": "~0.2",
         "node-red-contrib-viseo-aws": "~0.0",
@@ -49,7 +49,7 @@
         "node-red-contrib-viseo-wechat": "~0.1",
         "node-red-viseo-bot-manager": "~0.0",
         "node-red-viseo-helper": "~0.2.0-alpha.2",
-        "node-red-viseo-storage-plugin": "0.1.0-alpha.1",
+        "node-red-viseo-storage-plugin": "0.1.0-alpha.2",
         "uuid": "~3.1.0",
         "xmldom": "~0.1.27",
         "xpath": "~0.0.24"

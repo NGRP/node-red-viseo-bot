@@ -14,6 +14,7 @@
         "node-red-contrib-viseo-bot-message": "~0.1",
         "node-red-contrib-viseo-botbuilder": "~0.5",
         "node-red-contrib-viseo-chatbase": "~0.0",
+        "node-red-contrib-viseo-credentials "~0.0",
         "node-red-contrib-viseo-dialogflow": "~0.0",
         "node-red-contrib-viseo-ethjs": "~0.0",
         "node-red-contrib-viseo-facebook": "~0.0",

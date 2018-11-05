@@ -20,7 +20,6 @@ initArgs() {
 
 	local OPTIND=1
 	PORT=1880
-	NODE_RED_ROUTE="/"
 
 	SOURCE="$(dirname "${BASH_SOURCE[0]}")"
 	CUR_DIR="`pwd`"

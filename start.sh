@@ -20,13 +20,13 @@ initArgs() {
 			"--docker") set -- "$@" "-d" ;;
 			"--log-path") set -- "$@" "-l" ;;
 			"--bot") set -- "$@" "-b" ;;
+			"--node-red-route") set -- "$@" "-r" ;;
 			*) set -- "$@" "$arg" ;;
 		esac
 	done
 
 	local OPTIND=1
 	PORT=1880
-	
 
 	SOURCE="$(dirname "${BASH_SOURCE[0]}")"
 	CUR_DIR="`pwd`"
@@ -34,7 +34,7 @@ initArgs() {
 	SOURCE="`pwd`"
 	cd "$CUR_DIR"
 
-	while getopts p:e:l:h:s:b:d option
+	while getopts p:e:r:l:h:s:b:d option
 	do
 		case "$option" in
 			p) PORT="${OPTARG}";;
@@ -44,6 +44,7 @@ initArgs() {
 			d) START="pm2-docker";;
 			l) LOG_PATH="${OPTARG}";;
 			b) BOT="${OPTARG}";;
+			r) NODE_RED_ROUTE="${OPTARG}";;
 	 		:)
 	      		echo "Option -$OPTARG requires an argument." >&2
 	      		exit 1
@@ -109,6 +110,7 @@ cd "$CUR_DIR"
 
 NODE_ENV=$ENV \
 NODE_TLS_REJECT_UNAUTHORIZED=0 \
+NODE_RED_ROUTE="$NODE_RED_ROUTE" \
 CONFIG_PATH="$BOT_ROOT/conf/config.js" \
 FRAMEWORK_ROOT="$SOURCE" \
 HOST="$HOST" \

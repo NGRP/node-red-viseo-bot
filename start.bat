@@ -8,6 +8,7 @@ SET FRAMEWORK_ROOT=%~dp0
 IF "%CONFIG_PATH%"      == "" SET CONFIG_PATH=%BOT_ROOT%\conf\config.js
 IF "%NODE_RED%"         == "" SET NODE_RED=%FRAMEWORK_ROOT%\node_modules\node-red\red.js
 IF "%NODE_RED_CONFIG%"  == "" SET NODE_RED_CONFIG=%FRAMEWORK_ROOT%\conf\node-red-config.js
+IF "%NODE_RED_ROUTE%"   == "" SET NODE_RED_ROUTE=/
 
 :: Project parameters
 IF "%NODE_ENV%" == "" SET NODE_ENV=dev

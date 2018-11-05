@@ -13,7 +13,7 @@ initArgs() {
 			"--credential-secret") set -- "$@" "-s" ;;
 			"--docker") set -- "$@" "-d" ;;
 			"--log-path") set -- "$@" "-l" ;;
-			"--node-red-route") set --"$@" "-r" ;;
+			"--node-red-route") set -- "$@" "-r" ;;
 			*) set -- "$@" "$arg" ;;
 		esac
 	done
@@ -28,7 +28,7 @@ initArgs() {
 	SOURCE="`pwd`"
 	cd "$CUR_DIR"
 
-	while getopts p:e:l:h:s:d option
+	while getopts p:e:r:l:h:s:d option
 	do
 		case "$option" in
 			p) PORT="${OPTARG}";;

@@ -104,7 +104,7 @@ fi
 
 
 
-cd "$CUR_DIR"
+cd "$BOT_ROOT"
 
 
 

@@ -47,6 +47,15 @@ if(process.env.CREDENTIAL_SECRET) {
     settings.credentialSecret = process.env.CREDENTIAL_SECRET;
 }
 
+let nodesToExclude = [];
+if(config["node-red"] && config["node-red"]["node-excludes"]) {
+    let excludes = config["node-red"]["node-excludes"];
+    if(typeof excludes == "string") {
+        excludes = [excludes];
+    }
+    nodesToExclude.push(...excludes);
+}
+
 
 module.exports = extend(settings, true, {
 
@@ -112,6 +121,8 @@ module.exports = extend(settings, true, {
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
     nodesDir: path.resolve(process.env.BOT_ROOT, 'data/node_modules'),
+
+    nodesExcludes: nodesToExclude,
 
     // By default, the Node-RED UI is available at http://localhost:1880/
     // The following property can be used to specifiy a different root path.

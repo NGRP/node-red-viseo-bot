@@ -50,7 +50,7 @@
         "node-red-contrib-viseo-wechat": "~0.1",
         "node-red-viseo-bot-manager": "~0.0",
         "node-red-viseo-helper": "~0.1",
-        "node-red-viseo-storage-plugin": "0.1.0-alpha.7",
+        "node-red-viseo-storage-plugin": "0.1.0-alpha.8",
         "uuid": "~3.1.0",
         "xmldom": "~0.1.27",
         "xpath": "~0.0.24"

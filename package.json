@@ -18,7 +18,7 @@
         "node-red-contrib-viseo-ethjs": "~0.0",
         "node-red-contrib-viseo-facebook": "~0.1",
         "node-red-contrib-viseo-ffmpeg": "~0.1",
-        "node-red-contrib-viseo-file": "~0.1",
+        "node-red-contrib-viseo-file": "~0.2",
         "node-red-contrib-viseo-filter": "~0.0",
         "node-red-contrib-viseo-google-authentication": "~0.0",
         "node-red-contrib-viseo-google-maps": "~0.0",

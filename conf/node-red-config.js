@@ -46,7 +46,7 @@ if(config["node-red"] && config["node-red"]["node-excludes"]) {
     nodesToExclude.push(...excludes);
 }
 
-const enableProjects = ((process.env.ENABLE_PROJECTS || "") === "true");
+const enableProjects = ((process.env.ENABLE_PROJECTS || "true") === "true"); //projects enabled by default
 
 
 let settings = {

@@ -14,7 +14,7 @@
         "node-red-contrib-viseo-credentials": "~0.0",
         "node-red-contrib-viseo-botbuilder": "0.7.0-alpha.2",
         "node-red-contrib-viseo-chatbase": "~0.0",
-        "node-red-contrib-viseo-dialogflow": "0.1.0-alpha.8",
+        "node-red-contrib-viseo-dialogflow": "0.1.0-alpha.9",
         "node-red-contrib-viseo-ethjs": "~0.0",
         "node-red-contrib-viseo-facebook": "0.2.0-alpha.2",
         "node-red-contrib-viseo-ffmpeg": "~0.1",

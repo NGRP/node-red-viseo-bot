@@ -20,6 +20,7 @@ initArgs() {
 			"--docker") set -- "$@" "-d" ;;
 			"--log-path") set -- "$@" "-l" ;;
 			"--bot") set -- "$@" "-b" ;;
+			"--enable-projects") set -- "$@" "-x" ;;
 			"--node-red-route") set -- "$@" "-r" ;;
 			*) set -- "$@" "$arg" ;;
 		esac
@@ -45,6 +46,7 @@ initArgs() {
 			l) LOG_PATH="${OPTARG}";;
 			b) BOT="${OPTARG}";;
 			r) NODE_RED_ROUTE="${OPTARG}";;
+			x) ENABLE_PROJECTS="true";;
 	 		:)
 	      		echo "Option -$OPTARG requires an argument." >&2
 	      		exit 1
@@ -79,7 +81,7 @@ checkArgs() {
 	if [ -z "$APP" ] || [ -z "$ENV" ]
 	then
 
-		echo $red"Error - "$nocolor$bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --bot [ botfoldername ] --env [ dev|quali|prod ] [ --log-path pathtologs ] [ --credential-secret passphrase ] app"$normal
+		echo $red"Error - "$nocolor$bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --bot [ botfoldername ] --env [ dev|quali|prod ] [ --log-path pathtologs ] [ --credential-secret passphrase ] [ --enable-projects ] app"$normal
 		exit 1
 	fi
 }
@@ -88,26 +90,33 @@ initArgs "$@"
 checkArgs
 
 if [[ -n $BOT ]]; then
-	if [[ ! -d "projects/$BOT" ]]; then
-		echo $red"Error - "$nocolor$bold"Bot could not be started because source folder doesn't exist. Please create the project on the WEB interface first."$normal
-		exit 2
-	else
-		cd "projects/$BOT"
-		BOT_ROOT=`pwd`
 
-		if [[ ! -d "$BOT_ROOT"/data/node_modules ]]; then
-			cd data
-			npm install
+	if [[ -n $ENABLE_PROJECTS ]]; then
+	
+		if [[ ! -d "projects/$BOT" ]]; then
+			echo $red"Error - "$nocolor$bold"Bot could not be started because source folder doesn't exist. Please create the project on the WEB interface first."$normal
+			exit 2
+		else
+			cd "projects/$BOT"
+			BOT_ROOT=`pwd`
 		fi
+	
+	else
+		cd "$BOT"
+		BOT_ROOT=`pwd`
+	fi
+
+	if [[ ! -d "$BOT_ROOT"/data/node_modules ]]; then
+		cd data
+		npm install
 	fi
 fi
-
 
 
 cd "$BOT_ROOT"
 
 
-
+ENABLE_PROJECTS=$ENABLE_PROJECTS \
 NODE_ENV=$ENV \
 NODE_TLS_REJECT_UNAUTHORIZED=0 \
 NODE_RED_ROUTE="$NODE_RED_ROUTE" \

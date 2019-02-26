@@ -29,22 +29,12 @@ const defaultUsers = [
     }
 ];
 
-
 let config = { admin: {users: defaultUsers}};
 
 try {
     config = require(process.env.CONFIG_PATH)[process.env.NODE_ENV] || { admin: {users: defaultUsers}};
 } catch(e) {
     console.log("no project config file found");
-}
-
-
-let settings = {
-    storageModule: require("node-red-viseo-storage-plugin")
-};
-
-if(process.env.CREDENTIAL_SECRET) {
-    settings.credentialSecret = process.env.CREDENTIAL_SECRET;
 }
 
 let nodesToExclude = [];
@@ -55,6 +45,16 @@ if(config["node-red"] && config["node-red"]["node-excludes"]) {
     }
     nodesToExclude.push(...excludes);
 }
+
+const enableProjects = ((process.env.ENABLE_PROJECTS || "") === "true");
+
+
+let settings = {
+    storageModule: require("node-red-viseo-storage-plugin"),
+    credentialSecret: process.env.CREDENTIAL_SECRET,
+    nodesExcludes: nodesToExclude,
+    userDir: enableProjects ? path.join(process.env.FRAMEWORK_ROOT, '..') : path.normalize(process.env.BOT_ROOT + '/data/')
+};
 
 
 module.exports = extend(settings, true, {
@@ -116,13 +116,11 @@ module.exports = extend(settings, true, {
 
     // By default, all user data is stored in the Node-RED install directory. To
     // use a different location, the following property can be used
-    userDir: path.join(process.env.FRAMEWORK_ROOT, '..'),
+    //userDir: "",
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
     nodesDir: path.resolve(process.env.BOT_ROOT, 'data/node_modules'),
-
-    nodesExcludes: nodesToExclude,
 
     // By default, the Node-RED UI is available at http://localhost:1880/
     // The following property can be used to specifiy a different root path.
@@ -280,7 +278,7 @@ module.exports = extend(settings, true, {
     // https://github.com/node-red/node-red/wiki/Design%3A-Editor-Themes
     editorTheme: {
         projects: {
-            enabled: true, // To enable the Projects feature, set this value to true
+            enabled: enableProjects, // To enable the Projects feature, set this value to true
             createDefaultFromZip: "https://github.com/NGRP/viseo-bot-template/archive/migration-nodered-0.18.zip",
             packageDir: 'data/',
             activeProject: process.env.BOT

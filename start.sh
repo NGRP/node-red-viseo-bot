@@ -29,7 +29,7 @@ initArgs() {
 	local OPTIND=1
 	PORT=1880
 
-	SOURCE="$(dirname "${BASH_SOURCE[0]}")"
+	SOURCE="$( cd "$(dirname "$0")" ; pwd -P )"
 	CUR_DIR="`pwd`"
 	cd "$SOURCE"
 	SOURCE="`pwd`"

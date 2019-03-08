@@ -22,6 +22,7 @@ initArgs() {
 			"--bot") set -- "$@" "-b" ;;
 			"--disable-projects") set -- "$@" "-x" ;;
 			"--node-red-route") set -- "$@" "-r" ;;
+			"--disable-editor") set -- "$@" "-q" ;;
 			*) set -- "$@" "$arg" ;;
 		esac
 	done
@@ -36,8 +37,9 @@ initArgs() {
 	cd "$CUR_DIR"
 
 	ENABLE_PROJECTS="true"
+	NODE_RED_DISABLE_EDITOR="false"
 
-	while getopts p:e:r:l:h:s:b:d option
+	while getopts p:e:r:l:h:s:b:q:d option
 	do
 		case "$option" in
 			p) PORT="${OPTARG}";;
@@ -49,6 +51,7 @@ initArgs() {
 			b) BOT="${OPTARG}";;
 			r) NODE_RED_ROUTE="${OPTARG}";;
 			x) ENABLE_PROJECTS="false";;
+			q) NODE_RED_DISABLE_EDITOR="true";;
 	 		:)
 	      		echo "Option -$OPTARG requires an argument." >&2
 	      		exit 1
@@ -83,7 +86,7 @@ checkArgs() {
 	if [ -z "$APP" ] || [ -z "$ENV" ]
 	then
 
-		echo $red"Error - "$nocolor$bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --bot [ botfoldername ] --env [ dev|quali|prod ] [ --log-path pathtologs ] [ --credential-secret passphrase ] [ --disable-projects ] app"$normal
+		echo $red"Error - "$nocolor$bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --bot [ botfoldername ] --env [ dev|quali|prod ] [ --log-path pathtologs ] [ --credential-secret passphrase ] [ --disable-projects ] [ --disable-editor ] app"$normal
 		exit 1
 	fi
 }
@@ -129,6 +132,7 @@ PORT=$PORT \
 BOT="$BOT" \
 BOT_ROOT=$BOT_ROOT \
 CREDENTIAL_SECRET=$CREDENTIAL_SECRET \
+NODE_RED_DISABLE_EDITOR=$NODE_RED_DISABLE_EDITOR \
 $START \
 start \
 "$SOURCE"/node_modules/node-red/red.js $LOG_PATH $NAME -- -s "$SOURCE"/conf/node-red-config.js

@@ -99,8 +99,9 @@ if [[ -n "$BOT" ]]; then
 	if [[ -n "$ENABLE_PROJECTS" ]]; then
 	
 		if [[ ! -d "projects/$BOT" ]]; then
-			echo $red"Error - "$nocolor$bold"Bot could not be started because source folder doesn't exist. Please create the project on the WEB interface first."$normal
-			exit 2
+
+			BOT_ROOT=`pwd`"/projects/$BOT"
+
 		else
 			cd "projects/$BOT"
 			BOT_ROOT=`pwd`

@@ -21,7 +21,7 @@
         "node-red-contrib-viseo-google-authentication": "~0.0",
         "node-red-contrib-viseo-google-maps": "~0.0",
         "node-red-contrib-viseo-google-speech": "0.3.0-alpha.5",
-        "node-red-contrib-viseo-google-spreadsheet": "0.3.0-alpha.8",
+        "node-red-contrib-viseo-google-spreadsheet": "0.3.0-alpha.9",
         "node-red-contrib-viseo-google-youtube": "0.1.O-alpha.3",
         "node-red-contrib-viseo-help": "~0.1",
         "node-red-contrib-viseo-inbenta": "0.1.0-alpha.4",

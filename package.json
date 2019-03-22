@@ -30,7 +30,7 @@
         "node-red-contrib-viseo-loop": "0.4.0-alpha.5",
         "node-red-contrib-viseo-mongodb": "~0.4",
         "node-red-contrib-viseo-ms-graph": "0.3.0-alpha.5",
-        "node-red-contrib-viseo-ms-oxford": "0.3.0-alpha.8",
+        "node-red-contrib-viseo-ms-oxford": "0.3.0-alpha.10",
         "node-red-contrib-viseo-nedb": "~0.3",
         "node-red-contrib-viseo-nosql": "~0.2",
         "node-red-contrib-viseo-qrcode": "~0.1",

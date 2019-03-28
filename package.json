@@ -26,7 +26,7 @@
         "node-red-contrib-viseo-google-youtube": "0.1.0-alpha.3",
         "node-red-contrib-viseo-help": "~0.1",
         "node-red-contrib-viseo-inbenta": "0.1.0-alpha.4",
-        "node-red-contrib-viseo-jimp": "~0.1",
+        "node-red-contrib-viseo-jimp": "~0.2",
         "node-red-contrib-viseo-log": "~0.1",
         "node-red-contrib-viseo-loop": "0.4.0-alpha.5",
         "node-red-contrib-viseo-mongodb": "~0.4",

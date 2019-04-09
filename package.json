@@ -19,7 +19,7 @@
         "node-red-contrib-viseo-ffmpeg": "~0.1",
         "node-red-contrib-viseo-file": "0.3.0-alpha.3",
         "node-red-contrib-viseo-google-actions": "0.1.0-alpha.1",
-        "node-red-contrib-viseo-google-authentication": "0.1.0-alpha.1",
+        "node-red-contrib-viseo-google-authentication": "0.1.0-alpha.2",
         "node-red-contrib-viseo-google-maps": "~0.0",
         "node-red-contrib-viseo-google-speech": "0.3.0-alpha.5",
         "node-red-contrib-viseo-google-spreadsheet": "0.3.0-alpha.10",

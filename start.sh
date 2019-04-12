@@ -39,7 +39,7 @@ initArgs() {
 	ENABLE_PROJECTS="true"
 	NODE_RED_DISABLE_EDITOR="false"
 
-	while getopts p:e:r:l:h:s:b:q:d option
+	while getopts p:e:r:l:h:s:b:xqd option
 	do
 		case "$option" in
 			p) PORT="${OPTARG}";;
@@ -96,7 +96,7 @@ checkArgs
 
 if [[ -n "$BOT" ]]; then
 
-	if [[ -n "$ENABLE_PROJECTS" ]]; then
+	if [[ "$ENABLE_PROJECTS" = "true" ]]; then
 	
 		if [[ ! -d "projects/$BOT" ]]; then
 
@@ -108,7 +108,6 @@ if [[ -n "$BOT" ]]; then
 		fi
 	
 	else
-		cd "$BOT"
 		BOT_ROOT=`pwd`
 	fi
 

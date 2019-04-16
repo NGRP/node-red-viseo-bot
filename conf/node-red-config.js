@@ -56,6 +56,9 @@ let settings = {
     userDir: enableProjects ? path.join(process.env.FRAMEWORK_ROOT, '..') : path.normalize(process.env.BOT_ROOT + '/data/')
 };
 
+if(enableProjects === false) {
+    settings.credentialsFile = "flows_cred_"+process.env.NODE_ENV+".json";
+}
 
 module.exports = extend(settings, true, {
 

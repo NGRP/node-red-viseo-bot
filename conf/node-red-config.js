@@ -56,7 +56,9 @@ let settings = {
     userDir: enableProjects ? path.join(process.env.FRAMEWORK_ROOT, '..') : path.normalize(process.env.BOT_ROOT + '/data/')
 };
 
-if(enableProjects === false) {
+
+const splitCredentialFiles = ((process.env.CREDENTIAL_SPLIT_FILES || "true") === "true"); //credentials splitted by default
+if(enableProjects === false && splitCredentialFiles) {
     settings.credentialsFile = "flows_cred_"+process.env.NODE_ENV+".json";
 }
 

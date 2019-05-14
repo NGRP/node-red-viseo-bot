@@ -53,7 +53,8 @@ let settings = {
     storageModule: require("node-red-viseo-storage-plugin"),
     credentialSecret: process.env.CREDENTIAL_SECRET,
     nodesExcludes: nodesToExclude,
-    userDir: enableProjects ? path.join(process.env.FRAMEWORK_ROOT, '..') : path.normalize(process.env.BOT_ROOT + '/data/')
+    userDir: enableProjects ? path.join(process.env.FRAMEWORK_ROOT, '..') : path.normalize(process.env.BOT_ROOT + '/data/'),
+    httpNodeMiddleware: require(process.env.NODE_RED_HTTP_MIDDLEWARE || "node-red-viseo-middleware")()
 };
 
 if(enableProjects === false) {

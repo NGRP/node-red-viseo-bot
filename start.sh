@@ -23,6 +23,7 @@ initArgs() {
 			"--disable-projects") set -- "$@" "-x" ;;
 			"--node-red-route") set -- "$@" "-r" ;;
 			"--disable-editor") set -- "$@" "-q" ;;
+			"--node-red-http-middleware") set -- "$@" "-m";;
 			*) set -- "$@" "$arg" ;;
 		esac
 	done
@@ -39,7 +40,7 @@ initArgs() {
 	ENABLE_PROJECTS="true"
 	NODE_RED_DISABLE_EDITOR="false"
 
-	while getopts p:e:r:l:h:s:b:xqd option
+	while getopts p:e:r:l:h:s:m:b:xqd option
 	do
 		case "$option" in
 			p) PORT="${OPTARG}";;
@@ -52,6 +53,7 @@ initArgs() {
 			r) NODE_RED_ROUTE="${OPTARG}";;
 			x) ENABLE_PROJECTS="false";;
 			q) NODE_RED_DISABLE_EDITOR="true";;
+			m) NODE_RED_HTTP_MIDDLEWARE="${OPTARG}";;
 	 		:)
 	      		echo "Option -$OPTARG requires an argument." >&2
 	      		exit 1
@@ -120,8 +122,8 @@ fi
 
 cd "$BOT_ROOT"
 
-
 ENABLE_PROJECTS=$ENABLE_PROJECTS \
+NODE_RED_HTTP_MIDDLEWARE="$NODE_RED_HTTP_MIDDLEWARE" \
 NODE_ENV=$ENV \
 NODE_TLS_REJECT_UNAUTHORIZED=0 \
 NODE_RED_ROUTE="$NODE_RED_ROUTE" \

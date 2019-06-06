@@ -2,12 +2,13 @@
 
 :initArgs
 :: asks for the -foo argument and store the value in the variables
-:: ./start.bat [ -port port ] [ -host http://host.url ] [ -bot botfoldername ] [ -env dev|quali|prod ] [ -log pathtologs ] [ -cred passphrase ] [ -ui nodereduiroute]
+:: ./start.bat [ -port port ] [ -host http://host.url ] [ -bot botfoldername ] [ -env dev|quali|prod ] [ -cred passphrase ] [ -ui nodereduiroute]
+
+
 call:getArgWithValue "-port" "PORT" "%~1" "%~2" && shift && shift && goto :initArgs
 call:getArgWithValue "-host" "HOST" "%~1" "%~2" && shift && shift && goto :initArgs
 call:getArgWithValue "-bot" "BOT" "%~1" "%~2" && shift && shift && goto :initArgs
 call:getArgWithValue "-env" "NODE_ENV" "%~1" "%~2" && shift && shift && goto :initArgs
-call:getArgWithValue "-log" "LOG_PATH" "%~1" "%~2" && shift && shift && goto :initArgs
 call:getArgWithValue "-cred" "CREDENTIAL_SECRET" "%~1" "%~2" && shift && shift && goto :initArgs
 call:getArgWithValue "-ui" "NODE_RED_ROUTE" "%~1" "%~2" && shift && shift && goto :initArgs
 
@@ -17,23 +18,26 @@ if "%HOST%" == "" SET HOST=http://127.0.0.1
 if "%NODE_ENV%"  == "" SET NODE_ENV=dev
 
 :: Project paths
-if "%BOT%" == "" GOTO :helper
 SET FRAMEWORK_ROOT=%~dp0
 CD ..
-
 SET FOLDER_ROOT=%~dp0
-SET BOT_ROOT=%FOLDER_ROOT%projects\%BOT%
-SET CONFIG_PATH=%BOT_ROOT%\conf\config.js
+
+if "%BOT%" neq "" (
+  SET BOT_ROOT=%FOLDER_ROOT%projects\%BOT%
+  SET CONFIG_PATH=%BOT_ROOT%\conf\config.js
+) else (
+  @echo Warning - No bot specified
+  SET BOT=""
+  SET BOT_ROOT="."
+  SET CONFIG_PATH="."
+)
+
 SET ENABLE_PROJECTS=true
 SET NODE_RED_DISABLE_EDITOR=false
 
 :: Project configs
-IF "%CONFIG_PATH%"      == "" SET CONFIG_PATH=%BOT_ROOT%\conf\config.js
 IF "%NODE_RED%"         == "" SET NODE_RED=%FRAMEWORK_ROOT%node_modules\node-red\red.js
 IF "%NODE_RED_CONFIG%"  == "" SET NODE_RED_CONFIG=%FRAMEWORK_ROOT%conf\node-red-config.js
-
-echo "%CONFIG_PATH%"
-echo "%NODE_RED_CONFIG%"
 
 
 :: Required to fix SSL issues
@@ -69,6 +73,6 @@ goto:eof
 
 :helper
 
-@echo "Error - usage : ./start.bat -bot [ botfoldername ] [ -port port ] [ -host http://host.url ] [ -env dev|quali|prod ] [ -log pathtologs ] [ -cred passphrase ]"
+@echo "Error - usage : ./start.bat -bot [ botfoldername ] [ -port port ] [ -host http://host.url ] [ -env dev|quali|prod ] [ -cred passphrase ]"
 
 :END

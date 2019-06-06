@@ -4,7 +4,6 @@
 :: asks for the -foo argument and store the value in the variables
 :: ./start.bat [ -port port ] [ -host http://host.url ] [ -bot botfoldername ] [ -env dev|quali|prod ] [ -cred passphrase ] [ -ui nodereduiroute]
 
-
 call:getArgWithValue "-port" "PORT" "%~1" "%~2" && shift && shift && goto :initArgs
 call:getArgWithValue "-host" "HOST" "%~1" "%~2" && shift && shift && goto :initArgs
 call:getArgWithValue "-bot" "BOT" "%~1" "%~2" && shift && shift && goto :initArgs
@@ -12,24 +11,23 @@ call:getArgWithValue "-env" "NODE_ENV" "%~1" "%~2" && shift && shift && goto :in
 call:getArgWithValue "-cred" "CREDENTIAL_SECRET" "%~1" "%~2" && shift && shift && goto :initArgs
 call:getArgWithValue "-ui" "NODE_RED_ROUTE" "%~1" "%~2" && shift && shift && goto :initArgs
 
-:: Project default settings
-if "%PORT%" == "" SET PORT=1880
-if "%HOST%" == "" SET HOST=http://127.0.0.1
-if "%NODE_ENV%"  == "" SET NODE_ENV=dev
-
 :: Project paths
 SET FRAMEWORK_ROOT=%~dp0
 CD ..
 SET FOLDER_ROOT=%~dp0
 
-if "%BOT%" neq "" (
-  SET BOT_ROOT=%FOLDER_ROOT%projects\%BOT%
-  SET CONFIG_PATH=%BOT_ROOT%\conf\config.js
-) else (
+:: Project default settings
+if "%PORT%" == "" SET PORT=1880
+if "%HOST%" == "" SET HOST=http://127.0.0.1
+if "%NODE_ENV%"  == "" SET NODE_ENV=dev
+
+if "%BOT%" == "" (
   @echo Warning - No bot specified
-  SET BOT=""
   SET BOT_ROOT="."
   SET CONFIG_PATH="."
+) else (
+  SET BOT_ROOT=%FOLDER_ROOT%projects\%BOT%
+  SET CONFIG_PATH=%FOLDER_ROOT%projects\%BOT%\conf\config.js
 )
 
 SET ENABLE_PROJECTS=true

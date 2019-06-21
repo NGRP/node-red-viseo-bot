@@ -53,8 +53,9 @@ let settings = {
     storageModule: require("node-red-viseo-storage-plugin"),
     credentialSecret: process.env.CREDENTIAL_SECRET,
     nodesExcludes: nodesToExclude,
-    userDir: enableProjects ? path.join(process.env.FRAMEWORK_ROOT, '..') : path.normalize(process.env.BOT_ROOT + '/data/'),
-    httpNodeMiddleware: require(process.env.NODE_RED_HTTP_MIDDLEWARE || "node-red-viseo-middleware")()
+    userDir: path.normalize(process.env.BOT_ROOT + '/data/'),
+    httpNodeMiddleware: require(process.env.NODE_RED_HTTP_MIDDLEWARE || "node-red-viseo-middleware")(),
+    projectsDir: path.join(process.env.FRAMEWORK_ROOT, '../projects')
 };
 
 if(enableProjects === false) {
@@ -124,7 +125,7 @@ module.exports = extend(settings, true, {
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
-    nodesDir: path.resolve(process.env.BOT_ROOT, 'data/node_modules'),
+    //nodesDir: path.resolve(process.env.BOT_ROOT, 'data/node_modules'),
 
     // By default, the Node-RED UI is available at http://localhost:1880/
     // The following property can be used to specifiy a different root path.

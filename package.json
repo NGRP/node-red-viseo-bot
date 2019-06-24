@@ -16,6 +16,7 @@
         "node-red-contrib-viseo-file": "0.3.0-alpha.4",
         "node-red-contrib-viseo-google-spreadsheet": "0.3.0-alpha.12",
         "node-red-contrib-viseo-help": "0.2.0-alpha.2",
+
         "node-red-contrib-viseo-loop": "0.4.0-alpha.8",
         "node-red-contrib-viseo-mongodb": "~0.4",
         "node-red-contrib-viseo-nedb": "~0.3",

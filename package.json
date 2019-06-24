@@ -24,7 +24,7 @@
         "node-red-contrib-viseo-google-speech": "0.3.0-alpha.7",
         "node-red-contrib-viseo-google-spreadsheet": "0.3.0-alpha.12",
         "node-red-contrib-viseo-google-youtube": "0.1.0-alpha.5",
-        "node-red-contrib-viseo-help": "0.1.0-alpha.2",
+        "node-red-contrib-viseo-help": "0.2.0-alpha.2",
         "node-red-contrib-viseo-iadvize": "~0.0",
         "node-red-contrib-viseo-inbenta": "0.1.0-alpha.6",
         "node-red-contrib-viseo-jimp": "~0.2",

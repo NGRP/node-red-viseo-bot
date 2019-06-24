@@ -10,9 +10,11 @@
         "node-red-contrib-viseo-bot-message": "0.5.0-alpha.1",
         "node-red-contrib-viseo-bot-socketio": "~0.0",
         "node-red-contrib-viseo-botbuilder": "0.8.0-alpha.10",
+
         "node-red-contrib-viseo-credentials": "~0.1",
         "node-red-contrib-viseo-dialogflow": "0.1.0-alpha.28",
         "node-red-contrib-viseo-facebook": "0.3.0-alpha.5",
+
         "node-red-contrib-viseo-file": "0.3.0-alpha.4",
         "node-red-contrib-viseo-google-spreadsheet": "0.3.0-alpha.12",
         "node-red-contrib-viseo-help": "0.2.0-alpha.2",

@@ -1,6 +1,6 @@
 {
     "name": "node-red-viseo-bot",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "A boilerplate for node-red-contrib-viseo",
     "dependencies": {
         "moment-timezone": "~0.5.11",
@@ -18,7 +18,7 @@
         "node-red-contrib-viseo-ethjs": "~0.0",
         "node-red-contrib-viseo-facebook": "~0.0",
         "node-red-contrib-viseo-ffmpeg": "~0.2",
-        "node-red-contrib-viseo-file": "~0.1",
+        "node-red-contrib-viseo-file": "~0.3",
         "node-red-contrib-viseo-google-authentication": "~0.0",
         "node-red-contrib-viseo-google-maps": "~0.0",
         "node-red-contrib-viseo-google-speech": "~0.2",

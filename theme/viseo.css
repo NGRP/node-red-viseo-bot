@@ -93,6 +93,10 @@ path.link_line {
     stroke: #bbb;
 }
 
+.red-ui-tabs ul li {
+    border-radius: 10px 10px 0 0;
+}
+
 .group-box-active,
 .drag_line,
 .drag_line_hidden

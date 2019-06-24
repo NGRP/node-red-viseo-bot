@@ -48,7 +48,6 @@ if(config["node-red"] && config["node-red"]["node-excludes"]) {
 
 const enableProjects = ((process.env.ENABLE_PROJECTS || "true") === "true"); //projects enabled by default
 
-
 let settings = {
     storageModule: require("node-red-viseo-storage-plugin"),
     credentialSecret: process.env.CREDENTIAL_SECRET,
@@ -62,6 +61,8 @@ if(enableProjects === false) {
 }
 
 module.exports = extend(settings, true, {
+
+    paletteCategories: ["📻_channels", "🖐️_channels_helpers", "⚙️_bot_factory", "🛠️_tools", "💾_data", "📊_logs", "💬_language", "🖼️_image", "🔉_audio", "🃏_miscellaneous" ],
 
     // the tcp port that the Node-RED web server is listening on
     uiPort: process.env.PORT || 1880,
@@ -288,20 +289,20 @@ module.exports = extend(settings, true, {
             activeProject: process.env.BOT
         },
         page: {
-            title: "VISEO Framework - "+process.env.BOT.replace(/[-_\.]/g, ' '),
+            title: "VMB - " + (process.env.BOT ? process.env.BOT.replace(/[-_\.]/g, ' ') : "welcome !"),
             favicon: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/favicon.ico"), 
-            css: path.normalize(process.env.FRAMEWORK_ROOT + (process.env.NODE_ENV == 'prod' ? "/theme/viseo_prod.css" : "/theme/viseo.css"))
+            css: path.normalize(process.env.FRAMEWORK_ROOT + (process.env.NODE_ENV == 'prod' ? "/theme/viseo_prod.css" : "/theme/viseo.css")),
+            scripts: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/viseo.js"), 
         },
         header: {
-            title: "VISEO Framework - "+process.env.BOT.replace(/[-_\.]/g, ' '),
-            image: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/viseo_40x40.png"), 
-            url: "http://bot.viseo.io" 
+            title: (process.env.BOT ? process.env.BOT.replace(/[-_\.]/g, ' ') : "welcome !") + (process.env.NODE_ENV == 'prod' ? ' [PROD]' : ''),
+            image: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/logo_" + (process.env.NODE_ENV === 'prod' ? 'prod' : 'dev') + ".png"),
+            url: "https://bot.viseo.io" 
         },
         
         deployButton: {
             type:"simple",
-            label:"Save",
-            icon: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/v.png")
+            label:"Save"
         },
         
         menu: {
@@ -309,15 +310,15 @@ module.exports = extend(settings, true, {
             "menu-item-export-library": false,
             "menu-item-keyboard-shortcuts": false,
             "menu-item-help": {
-                label: "VISEO Framework",
-                url: "http://bot.viseo.io"
+                label: (process.env.BOT ? process.env.BOT.replace(/[-_\.]/g, ' ') : "welcome !"),
+                url: "https://bot.viseo.io"
             }
         },
         
         userMenu: true,
         
         login: {
-            image: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/viseo_256x256.png")
+            image: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/viseo_login.png")
         }        
     },
 });

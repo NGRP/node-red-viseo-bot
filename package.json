@@ -9,7 +9,7 @@
         "node-red-contrib-viseo-aws": "0.1.0-alpha.9",
         "node-red-contrib-viseo-bear": "~0.2",
         "node-red-contrib-viseo-blink": "0.2.0-alpha.5",
-        "node-red-contrib-viseo-bot-message": "0.3.0-alpha.12",
+        "node-red-contrib-viseo-bot-message": "0.3.0-alpha.13",
         "node-red-contrib-viseo-botbuilder": "0.8.0-alpha.10",
         "node-red-contrib-viseo-chatbase": "~0.1",
         "node-red-contrib-viseo-credentials": "~0.1",

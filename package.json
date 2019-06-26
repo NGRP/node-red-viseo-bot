@@ -26,9 +26,11 @@
         "node-red-contrib-viseo-repeat": "0.3.0-alpha.2",
         "node-red-contrib-viseo-tokenizer": "~0.2",
         "node-red-viseo-bot-manager": "~0.0",
-        "node-red-viseo-helper": "0.2.0-alpha.10",
-        "node-red-viseo-middleware": "~0.0",
+
+        "node-red-viseo-helper": "0.2.0-alpha.11",
         "node-red-viseo-storage-plugin": "0.1.0-alpha.9",
+
+        "node-red-viseo-middleware": "~0.0",
         
         "uuid": "~3.1.0",
         "xmldom": "~0.1.27",

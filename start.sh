@@ -96,13 +96,15 @@ checkArgs() {
 initArgs "$@"
 checkArgs
 
+ROOT_DIR=`pwd`
+
 if [[ -n "$BOT" ]]; then
 
 	if [[ "$ENABLE_PROJECTS" = "true" ]]; then
 	
 		if [[ ! -d "projects/$BOT" ]]; then
 
-			BOT_ROOT=`pwd`"/projects/$BOT"
+			BOT_ROOT="$ROOT_DIR/projects/$BOT"
 
 		else
 			cd "projects/$BOT"
@@ -110,7 +112,7 @@ if [[ -n "$BOT" ]]; then
 		fi
 	
 	else
-		BOT_ROOT=`pwd`
+		BOT_ROOT="$ROOT_DIR"
 	fi
 
 	if [[ ! -d "$BOT_ROOT"/data/node_modules ]]; then
@@ -125,6 +127,7 @@ cd "$BOT_ROOT"
 
 ENABLE_PROJECTS=$ENABLE_PROJECTS \
 NODE_RED_HTTP_MIDDLEWARE="$NODE_RED_HTTP_MIDDLEWARE" \
+ROOT_DIR="$ROOT_DIR" \
 NODE_ENV=$ENV \
 NODE_TLS_REJECT_UNAUTHORIZED=0 \
 NODE_RED_ROUTE="$NODE_RED_ROUTE" \

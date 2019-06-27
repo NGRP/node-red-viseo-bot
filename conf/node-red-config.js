@@ -55,8 +55,10 @@ let settings = {
     nodesExcludes: nodesToExclude,
     userDir: path.normalize(process.env.BOT_ROOT + '/data/'),
     httpNodeMiddleware: require(process.env.NODE_RED_HTTP_MIDDLEWARE || "node-red-viseo-middleware")(),
-    projectsDir: path.join(process.env.FRAMEWORK_ROOT, '../projects')
+    projectsDir: path.join(process.env.FRAMEWORK_ROOT, '../projects'),
+    settingsDir: process.env.ROOT_DIR
 };
+
 
 if(enableProjects === false) {
     settings.credentialsFile = "flows_cred_"+process.env.NODE_ENV+".json";

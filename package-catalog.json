@@ -41,7 +41,7 @@
             "description": "Chatbase logs and analytics node",
             "updated_at": "2019-06-28T12:00:00.000Z",
             "id": "node-red-contrib-viseo-chatbase",
-            "version":  "~0.0",
+            "version":  "~0.1",
             "url": "https://flows.nodered.org/node/node-red-contrib-viseo-chatbase"
         },
         {
@@ -102,7 +102,7 @@
         },
         {
             "description": "Jimp image treatment node",
-            "updated_at": "2019-06-28T12:00:00.000Z",
+            "updated_at": "2019-06-28T15:00:00.000Z",
             "id": "node-red-contrib-viseo-jimp",
             "version": "~0.2",
             "url": "https://flows.nodered.org/node/node-red-contrib-viseo-jimp"

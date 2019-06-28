@@ -1,0 +1,266 @@
+{
+    "name": "Node-RED VISEO catalogue",
+    "updated_at": "2019-06-28T12:00:00.000Z",
+    "modules": [
+        {
+            "description": "[channel] Amazon Alexa channel node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-amazon",
+            "version": "0.1.0-alpha.6",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-amazon"
+        },
+        {
+            "description": "AWS Lex and Reckognition nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-aws",
+            "version": "0.1.0-alpha.9",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-aws"
+        },
+        {
+            "description": "Bear2b image analysis node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-bear",
+            "version": "0.2.0",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-bear"
+        },
+        {
+            "description": "Blink cameras APIS node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-blink",
+            "version": "0.2.0-alpha.5",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-blink"
+        },
+        {
+            "description": "[channel] Bot wrapper to test and simulates channels",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-bot-wrapper",
+            "version":  "0.0.1",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-bot-wrapper"
+        },
+        {
+            "description": "Chatbase logs and analytics node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-chatbase",
+            "version":  "0.0.1",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-chatbase"
+        },
+        {
+            "description": "EthJS account and transaction nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-ethjs",
+            "version":  "0.1.0",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-ethjs"
+        },
+        {
+            "description": "FFMPEG media treatment command node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-ffmpeg",
+            "version": "0.3.0-alpha.3",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-ffmpeg"
+        },
+        {
+            "description": "Google Actions node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-google-actions",
+            "version": "0.1.0-alpha.2",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-google-actions"
+        },
+        {
+            "description": "Google Actions node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-google-actions",
+            "version": "0.1.0-alpha.2",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-google-actions"
+        },
+        {
+            "description": "Google Maps node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-google-maps",
+            "version": "0.1.0-alpha.2",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-google-maps"
+        },
+        {
+            "description": "Google Speech TTS and STT node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-google-speech",
+            "version": "0.3.0-alpha.7",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-google-speech"
+        },
+        {
+            "description": "Google Youtube Playlist and Search nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-google-youtube",
+            "version": "0.1.0-alpha.5",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-google-youtube"
+        },
+        {
+            "description": "[channel] iAdvize channel node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-iadvize",
+            "version": "0.0.3",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-iadvize"
+        },
+        {
+            "description": "Inbenta language analysis node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-inbenta",
+            "version": "0.1.0-alpha.6",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-inbenta"
+        },
+        {
+            "description": "Jimp image treatment node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-jimp",
+            "version": "0.2.3",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-jimp"
+        },
+        {
+            "description": "Azure, Xiti, Sqlite... logs nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-logs",
+            "version": "0.2.0",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-logs"
+        },
+        {
+            "description": "Azure, Xiti, Sqlite... logs nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-logs",
+            "version": "0.2.0",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-logs"
+        },
+        {
+            "description": "Microsoft Cognitive Services Decision node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-ms-decision",
+            "version": "0.0.1",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-ms-decision"
+        },
+        {
+            "description": "Microsoft Graph authentication and Excel nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-ms-graph",
+            "version": "0.3.0-alpha.8",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-ms-graph"
+        },
+        {
+            "description": "Microsoft Cognitive Services Language nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-ms-language",
+            "version": "0.0.1",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-ms-language"
+        },
+        {
+            "description": "Microsoft Cognitive Services Search nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-ms-search",
+            "version": "0.0.1",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-ms-search"
+        },
+        {
+            "description": "Microsoft Cognitive Services Speech node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-ms-speech",
+            "version": "0.0.1",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-ms-speech"
+        },
+        {
+            "description": "Microsoft Cognitive Services Vision nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-ms-vision",
+            "version": "0.0.1",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-ms-vision"
+        },
+        {
+            "description": "NLP.js language analysis node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-nlp-js",
+            "version": "0.0.1",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-nlp-js"
+        },
+        {
+            "description": "QRCode image decoder node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-qrcode",
+            "version": "0.2.0",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-qrcode"
+        },
+        {
+            "description": "Recast language analysis node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-recast",
+            "version": "0.1.0",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-recast"
+        },
+        {
+            "description": "Salesforce API node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-salesforce",
+            "version": "0.2.0-alpha.5",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-salesforce"
+        },
+        {
+            "description": "[channel] SARAH home automation nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-sarah",
+            "version": "0.2.0",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-sarah"
+        },
+        {
+            "description": "Sensit sensors API node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-sensit",
+            "version": "0.1.0",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-sensit"
+        },
+        {
+            "description": "SOAP requests helper node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-soap",
+            "version": "0.0.6",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-soap"
+        },
+        {
+            "description": "Socket.io in and out nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-socketio",
+            "version": "0.3.0-alpha.1",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-socketio"
+        },
+        {
+            "description": "Soundex text analytis nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-soundex",
+            "version": "0.2.0-alpha.2",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-soundex"
+        },
+        {
+            "description": "SoX audio analysis command node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-sox",
+            "version": "0.1.0-alpha.2",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-sox"
+        },
+        {
+            "description": "Trello list Card and Webhooks nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-trello",
+            "version": "0.3.0",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-trello"
+        },
+        {
+            "description": "[channel] WeChat channel node",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-wechat",
+            "version": "0.2.0-alpha.5",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-wechat"
+        },
+        {
+            "description": "[channel] ZenDesk channel nodes",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-zendesk",
+            "version": "0.0.1",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-zendesk"
+        },
+]}
+
+

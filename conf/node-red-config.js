@@ -66,6 +66,8 @@ if(enableProjects === false) {
 
 module.exports = extend(settings, true, {
 
+    paletteCategories: ["📻_channels", "🖐️_channels_helpers", "⚙️_bot_factory", "🛠️_tools", "💾_data", "📊_logs", "💬_language", "🖼️_image", "🔉_audio", "🃏_miscellaneous" ],
+
     // the tcp port that the Node-RED web server is listening on
     uiPort: process.env.PORT || 1880,
 
@@ -284,6 +286,9 @@ module.exports = extend(settings, true, {
     // https://github.com/node-red/node-red/issues/610
     // https://github.com/node-red/node-red/wiki/Design%3A-Editor-Themes
     editorTheme: {
+        palette: {
+            catalogues: ["https://raw.githubusercontent.com/NGRP/node-red-viseo-bot/installnodes-from-palette/package-catalog.json"]
+        },
         projects: {
             enabled: enableProjects, // To enable the Projects feature, set this value to true
             createDefaultFromZip: "https://github.com/NGRP/viseo-bot-template/archive/migration-nodered-0.18.zip",

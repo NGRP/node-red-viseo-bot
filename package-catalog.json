@@ -260,7 +260,8 @@
             "id": "node-red-contrib-viseo-zendesk",
             "version": "0.0.1",
             "url": "https://flows.nodered.org/node/node-red-contrib-viseo-zendesk"
-        },
-]}
+        }
+    ]
+}
 
 

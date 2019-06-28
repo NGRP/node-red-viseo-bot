@@ -16,6 +16,15 @@
         "node-red-viseo-helper": "0.3.0-alpha.1",
         "node-red-viseo-storage-plugin": "0.2.0-alpha.1",
         "node-red-viseo-middleware": "~0.0",
+
+        "node-red-contrib-viseo-bot-socketio": "0.3.0-alpha.1",
+        "node-red-contrib-viseo-botbuilder": "0.9.0-alpha.1",
+        "node-red-contrib-viseo-credentials": "~0.1",
+        "node-red-contrib-viseo-dialogflow": "0.2.0-alpha.2",
+        "node-red-contrib-viseo-facebook": "0.4.0-alpha.1",
+        "node-red-contrib-viseo-google-spreadsheet": "0.4.0-alpha.1",
+        "node-red-contrib-viseo-tokenizer": "~0.2",
+
         "uuid": "~3.1.0",
         "xmldom": "~0.1.27",
         "xpath": "~0.0.24"

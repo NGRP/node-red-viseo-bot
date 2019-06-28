@@ -70,9 +70,6 @@ span.logo IMG {
 }
 
 /* Flow */
-g.link_selected path.link_line {
-    stroke: #ffb400;
-}
 
 .node {
     stroke: #ddd;
@@ -114,6 +111,12 @@ path.link_line {
     stroke: #ffb400 !important;
 }
 
+.node_selected,
+g.link_selected path.link_line
+ {
+    stroke: #ff6600 !important;
+}
+
 
 button.primary,
 .ui-dialog-buttonset button.primary,
@@ -130,7 +133,6 @@ button.primary,
 .editor-tray-toolbar button.primary,
 .editor-tray-toolbar button.toggle.primary,
 .editor-tray-resize-button.primary,
-.editor-button:focus,
 .editor-button.toggle.primary,
 .red-ui-tab-button a.primary,
 .red-ui-tab-link-buttons a.primary {
@@ -160,6 +162,30 @@ button.primary:not(.disabled):not(.ui-button-disabled):hover,
     background: #ff6600 
 }
 
+.ui-dialog-buttonset button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.ui-dialog-buttonset button.primary:not(.disabled):hover,
+.palette-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+#sidebar .button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-footer-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-header-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-header-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.workspace-footer-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.workspace-footer-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+#workspace-toolbar .button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-toolbar button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-toolbar button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-resize-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.red-ui-tab-button a.primary:not(.disabled):not(.ui-button-disabled):hover,
+.red-ui-tab-link-buttons a.primary:not(.disabled):not(.ui-button-disabled):hover
+ {
+    border-color: #ff6600;
+    background: #ff6600 
+}
+
+/* 
 .debug-message-type-string, .debug-message-object-handle {
     color:#ff8a00 !important
 }
+*/

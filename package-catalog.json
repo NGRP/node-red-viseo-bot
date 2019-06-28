@@ -60,7 +60,7 @@
         },
         {
             "description": "Google Actions node",
-            "updated_at": "2019-06-28T12:00:00.000Z",
+            "updated_at": "2019-06-28T15:00:00.000Z",
             "id": "node-red-contrib-viseo-google-actions",
             "version": "0.1.0-alpha.5",
             "url": "https://flows.nodered.org/node/node-red-contrib-viseo-google-actions"

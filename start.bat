@@ -14,7 +14,7 @@ call:getArgWithValue "-ui" "NODE_RED_ROUTE" "%~1" "%~2" && shift && shift && got
 :: Project paths
 SET FRAMEWORK_ROOT=%~dp0
 CD ..
-SET FOLDER_ROOT=%~dp0
+SET ROOT_DIR=%~dp0
 
 :: Project default settings
 if "%PORT%" == "" SET PORT=1880
@@ -26,8 +26,8 @@ if "%BOT%" == "" (
   SET BOT_ROOT="."
   SET CONFIG_PATH="."
 ) else (
-  SET BOT_ROOT=%FOLDER_ROOT%projects\%BOT%
-  SET CONFIG_PATH=%FOLDER_ROOT%projects\%BOT%\conf\config.js
+  SET BOT_ROOT=%ROOT_DIR%projects\%BOT%
+  SET CONFIG_PATH=%ROOT_DIR%projects\%BOT%\conf\config.js
 )
 
 SET ENABLE_PROJECTS=true

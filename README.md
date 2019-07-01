@@ -13,7 +13,7 @@
 
 <p align="center">
   <i>
-  This project contains a set of Node-RED nodes open-sourced by </i><b><a href="http://www.viseo.com/">VISEO</a></b><i> to build smart applications and conversational assistants.
+  This project is open-sourced by </i><b><a href="http://www.viseo.com/">VISEO</a></b><i> to build smart applications and conversational assistants.
   </i>
 </p>
 

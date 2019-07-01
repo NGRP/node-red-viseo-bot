@@ -350,14 +350,6 @@ try {
      } else {
         const botSettings = require(process.env.NODE_RED_CONFIG_PATH);
 
-        if(botSettings.functionGlobalContext) {
-            for(let m of Object.keys(botSettings.functionGlobalContext)) {
-                if(typeof botSettings.functionGlobalContext[m] == "string") {
-                    botSettings.functionGlobalContext[m] = require(botSettings.functionGlobalContext[m]);
-                }
-            }
-        }
-
         if (botSettings) {
             finalSettings = dextend(defaultSettings, botSettings);
         }

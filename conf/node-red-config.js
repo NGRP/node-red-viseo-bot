@@ -70,8 +70,6 @@ if(enableProjects === false) {
 
 module.exports = extend(settings, true, {
 
-    paletteCategories: ["📻_channels", "🖐️_channels_helpers", "⚙️_bot_factory", "🛠️_tools", "💾_data", "📊_logs", "💬_language", "🖼️_image", "🔉_audio", "🃏_miscellaneous" ],
-
     // the tcp port that the Node-RED web server is listening on
     uiPort: process.env.PORT || 1880,
 
@@ -287,6 +285,25 @@ module.exports = extend(settings, true, {
             audit: false
         }
     },
+
+    paletteCategories: [
+        "📻_channels", 
+        "⚙️_bot_factory", 
+        "🛠️_tools",
+        "function",
+        "input",
+        "output", 
+        "💬_language",
+        "🖐️_channels_helpers", 
+        "💾_data", 
+        "📊_logs",  
+        "🖼️_image", 
+        "🔉_audio", 
+        "🃏_miscellaneous" 
+    ],
+
+    
+
     // https://github.com/node-red/node-red/issues/610
     // https://github.com/node-red/node-red/wiki/Design%3A-Editor-Themes
     editorTheme: {

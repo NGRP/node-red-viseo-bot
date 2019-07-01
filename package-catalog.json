@@ -115,13 +115,6 @@
             "url": "https://flows.nodered.org/node/node-red-contrib-viseo-logs"
         },
         {
-            "description": "Azure, Xiti, Sqlite... logs nodes",
-            "updated_at": "2019-06-28T12:00:00.000Z",
-            "id": "node-red-contrib-viseo-logs",
-            "version": "~0.2",
-            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-logs"
-        },
-        {
             "description": "Microsoft Cognitive Services Decision node",
             "updated_at": "2019-06-28T12:00:00.000Z",
             "id": "node-red-contrib-viseo-ms-decision",

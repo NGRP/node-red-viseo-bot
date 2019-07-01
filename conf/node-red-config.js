@@ -21,6 +21,7 @@
 const extend = require('extend');
 const path   = require('path');
 const fs = require('fs');
+const dextend= require('deep-extend');
 
 const defaultUsers = [
     {
@@ -38,37 +39,27 @@ try {
     console.log("no project config file found");
 }
 
-let nodesToExclude = [];
-if(config["node-red"] && config["node-red"]["node-excludes"]) {
-    let excludes = config["node-red"]["node-excludes"];
-    if(typeof excludes == "string") {
-        excludes = [excludes];
-    }
-    nodesToExclude.push(...excludes);
-}
-
 const enableProjects = ((process.env.ENABLE_PROJECTS || "true") === "true"); //projects enabled by default
 
-let settings = {
+let defaultSettings = {
     storageModule: require("node-red-viseo-storage-plugin"),
     credentialSecret: process.env.CREDENTIAL_SECRET,
-    nodesExcludes: nodesToExclude,
     httpNodeMiddleware: require(process.env.NODE_RED_HTTP_MIDDLEWARE || "node-red-viseo-middleware")(),
     projectsDir: path.join(process.env.FRAMEWORK_ROOT, '../projects'),
     settingsDir: process.env.ROOT_DIR
 };
 
 if(fs.existsSync(process.env.BOT_ROOT)) {
-    settings.userDir = path.normalize(process.env.BOT_ROOT + '/data/');
+    defaultSettings.userDir = path.normalize(process.env.BOT_ROOT + '/data/');
 } else {
-    settings.userDir = path.normalize(process.env.ROOT_DIR + '/data/');
+    defaultSettings.userDir = path.normalize(process.env.ROOT_DIR + '/data/');
 }
 
 if(enableProjects === false) {
-    settings.credentialsFile = "flows_cred_"+process.env.NODE_ENV+".json";
+    defaultSettings.credentialsFile = "flows_cred_"+process.env.NODE_ENV+".json";
 }
 
-module.exports = extend(settings, true, {
+defaultSettings = extend(defaultSettings, true, {
 
     // the tcp port that the Node-RED web server is listening on
     uiPort: process.env.PORT || 1880,
@@ -350,3 +341,29 @@ module.exports = extend(settings, true, {
         }        
     },
 });
+
+
+let finalSettings = defaultSettings;
+try {
+    if(fs.existsSync(process.env.NODE_RED_CONFIG_PATH) === false) {
+         console.log("Info: No override of Node-RED config found.")
+     } else {
+        const botSettings = require(process.env.NODE_RED_CONFIG_PATH);
+
+        if(botSettings.functionGlobalContext) {
+            for(let m of Object.keys(botSettings.functionGlobalContext)) {
+                if(typeof botSettings.functionGlobalContext[m] == "string") {
+                    botSettings.functionGlobalContext[m] = require(botSettings.functionGlobalContext[m]);
+                }
+            }
+        }
+
+        if (botSettings) {
+            finalSettings = dextend(defaultSettings, botSettings);
+        }
+     }
+} catch (e) {
+    console.log(e); 
+}
+
+module.exports = finalSettings;

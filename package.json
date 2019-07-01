@@ -27,7 +27,8 @@
         "node-red-contrib-viseo-nedb": "0.4.0-alpha.2",
         "uuid": "~3.1.0",
         "xmldom": "~0.1.27",
-        "xpath": "~0.0.24"
+        "xpath": "~0.0.24",
+        "deep-extend": "~0.6.0"
     },
     "repository": {
         "type": "git",

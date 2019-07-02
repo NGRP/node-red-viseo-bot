@@ -41,7 +41,7 @@
             "description": "Chatbase logs and analytics node",
             "updated_at": "2019-06-28T12:00:00.000Z",
             "id": "node-red-contrib-viseo-chatbase",
-            "version":  "~0.1",
+            "version":  "0.1.2",
             "url": "https://flows.nodered.org/node/node-red-contrib-viseo-chatbase"
         },
         {
@@ -246,6 +246,13 @@
             "id": "node-red-contrib-viseo-zendesk",
             "version": "0.1.0-alpha.1",
             "url": "https://flows.nodered.org/node/node-red-contrib-viseo-zendesk"
+        },
+        {
+            "description": "Tokenizer",
+            "updated_at": "2019-06-28T12:00:00.000Z",
+            "id": "node-red-contrib-viseo-tokenizer",
+            "version": "0.2.1",
+            "url": "https://flows.nodered.org/node/node-red-contrib-viseo-tokenizer"
         }
     ]
 }

@@ -74,13 +74,14 @@
     "license": "Apache-2.0",
     "keywords": [
         "viseo",
+        "bot",
+        "maker",
         "vbm",
         "sarah",
         "chatbot",
         "vocal",
         "assistant",
         "ai",
-        "bot",
         "smart"
     ]
 }

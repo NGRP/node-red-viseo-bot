@@ -68,6 +68,9 @@
         "node-red-contrib-viseo-wechat": "0.3.0-alpha.1",
         "node-red-contrib-viseo-zendesk": "0.1.0-alpha.1"
     },
+    "scripts": {
+        "updateProjects": "node update_projects.js"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/NGRP/node-red-viseo-bot"

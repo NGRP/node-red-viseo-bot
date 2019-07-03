@@ -61,9 +61,6 @@ span.logo IMG {
 }
 
 /* Flow */
-g.link_selected path.link_line {
-    stroke: #66c2ff;
-}
 
 .node {
     stroke: #ddd;
@@ -99,16 +96,20 @@ path.link_line {
 
 .group-box-active,
 .drag_line,
-.drag_line_hidden
+.drag_line_hidden,
 .port_hovered,
 .port_quick_link,
 .node_tools_hovered,
-.node_selected,
 .link_port,
 .lasso {
     stroke: #66c2ff !important;
 }
 
+.node_selected,
+g.link_selected path.link_line
+ {
+    stroke: #008CE8 !important;
+}
 
 button.primary,
 .ui-dialog-buttonset button.primary,
@@ -125,7 +126,6 @@ button.primary,
 .editor-tray-toolbar button.primary,
 .editor-tray-toolbar button.toggle.primary,
 .editor-tray-resize-button.primary,
-.editor-button:focus,
 .editor-button.toggle.primary,
 .red-ui-tab-button a.primary,
 .red-ui-tab-link-buttons a.primary {
@@ -133,6 +133,7 @@ button.primary,
     background: #008CE8
 }
 
+.deploy-button:hover,
 button.primary:not(.disabled):not(.ui-button-disabled):hover,
 .ui-dialog-buttonset button.primary:not(.disabled):hover,
 .palette-button.primary:not(.disabled):not(.ui-button-disabled):hover,
@@ -155,6 +156,31 @@ button.primary:not(.disabled):not(.ui-button-disabled):hover,
     background: #0B5AA3 
 }
 
-.debug-message-type-string, .debug-message-object-handle {
+
+.ui-dialog-buttonset button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.ui-dialog-buttonset button.primary:not(.disabled):hover,
+.palette-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+#sidebar .button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-footer-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-header-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-header-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.workspace-footer-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.workspace-footer-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+#workspace-toolbar .button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-toolbar button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-toolbar button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-resize-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.red-ui-tab-button a.primary:not(.disabled):not(.ui-button-disabled):hover,
+.red-ui-tab-link-buttons a.primary:not(.disabled):not(.ui-button-disabled):hover
+ {
+    border-color: #0B5AA3;
+    background: #0B5AA3 
+}
+
+/* 
+.debug-message-object-handle {
     color:#008CE8 !important
 }
+*/

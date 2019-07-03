@@ -61,6 +61,8 @@ if(enableProjects === false) {
 
 defaultSettings = extend(defaultSettings, true, {
 
+    paletteCategories: ["📻_channels", "🖐️_channels_helpers", "⚙️_bot_factory", "🛠️_tools", "💾_data", "📊_logs", "💬_language", "🖼️_image", "🔉_audio", "🃏_miscellaneous" ],
+
     // the tcp port that the Node-RED web server is listening on
     uiPort: process.env.PORT || 1880,
 

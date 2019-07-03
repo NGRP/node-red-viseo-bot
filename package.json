@@ -37,6 +37,7 @@
         "node-red-contrib-viseo-nosql": "~0.2",
         "node-red-contrib-viseo-qrcode": "~0.1",
         "node-red-contrib-viseo-random": "~0.2",
+        "node-red-contrib-viseo-mustache": "~0.0",
         "node-red-contrib-viseo-recast": "~0.0",
         "node-red-contrib-viseo-repeat": "~0.2",
         "node-red-contrib-viseo-salesforce": "0.2.0-alpha.4",

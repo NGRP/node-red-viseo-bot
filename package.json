@@ -79,6 +79,7 @@
         "chatbot",
         "vocal",
         "assistant",
-        "ai"
+        "ai",
+        "bot"
     ]
 }

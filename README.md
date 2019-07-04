@@ -1,7 +1,3 @@
-
-<h3 align="center">- Node-RED open-source nodes -</h3>
-
-
 <h1 align="center">
   <a href="https://github.com/NGRP/node-red-contrib-viseo/wiki/Home">
     <img src="https://raw.githubusercontent.com/NGRP/node-red-contrib-viseo/migration-0.19/doc/header.png" alt="VISEO Bot Maker" width="100%">
@@ -33,8 +29,6 @@ Different **bot Servers** nodes act as adapters between the flow and text or voi
 
 As Node-RED is a graphical programming tool, it makes easy for both developers and administrators to create complete conversationnal flows and to connect to multiple channels.
 
-
-
 ### Development
 
 
@@ -51,12 +45,15 @@ The roadmap is available on [this GitHub Project](https://github.com/NGRP/node-r
 ## Developers
 ### Getting Started
 
-A documentation is available on [this GitHub Wiki](https://github.com/NGRP/node-red-contrib-viseo/wiki/Getting-started).
+A documentation is available on [this GitHub Wiki](https://github.com/NGRP/node-red-contrib-bot/wiki).
 
 
 ### Getting Help
 
-For bug reports, feature requests, further help or general discussion, please use the [github issue tracker](https://github.com/NGRP/node-red-contrib-viseo/issues). In order to label your issue with the `question` tag, please specify:
+- For bug reports, feature requests, further help or general discussion, please use [this github issue tracker](https://github.com/NGRP/node-red-contrib-bot/issues). 
+- If your request concerns a specific node or package, please use [the github issue tracker of the nodes repository](https://github.com/NGRP/node-red-contrib-viseo/issues). 
+
+In order to label your issue with the `question` tag, please specify:
 - if your message is a question / discussion
 - the module or the node name
 

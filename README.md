@@ -3,7 +3,7 @@
     <img src="https://raw.githubusercontent.com/wiki/NGRP/node-red-viseo-bot/img/doc/header.png" alt="VISEO Bot Maker" width="100%">
   </a>
   <a href="https://bot.viseo.io/"><img src="https://raw.githubusercontent.com/wiki/NGRP/node-red-viseo-bot/img/doc/icon_web.png" alt="VISEO Bot Maker" width="120"></a>
-  <a href="https://github.com/NGRP/node-red-contrib-viseo/wiki/Getting-started"><img src="https://raw.githubusercontent.com/wiki/NGRP/node-red-viseo-bot/img/doc/icon_doc.png" alt="VISEO Bot Maker" width="120"></a>
+  <a href="https://github.com/NGRP/node-red-viseo-bot/wiki/Home"><img src="https://raw.githubusercontent.com/wiki/NGRP/node-red-viseo-bot/img/doc/icon_doc.png" alt="VISEO Bot Maker" width="120"></a>
   <a href="mailto:contact@viseo.io"><img src="https://raw.githubusercontent.com/wiki/NGRP/node-red-viseo-bot/img/doc/icon_mail.png" alt="VISEO Bot Maker" width="120"></a>
 </h1>
 
@@ -11,6 +11,12 @@
   <i>
   This project is open-sourced by </i><b><a href="http://www.viseo.com/">VISEO</a></b><i> to build smart applications and conversational assistants.
   </i>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/package-json/v/NGRP/node-red-viseo-bot.svg?color=66c2ff" alt="Version"/>
+  
+  <img src="https://img.shields.io/github/release/NGRP/node-red-viseo-bot.svg?color=66c2ff" alt="Release"/>
 </p>
 
 ---

@@ -24,6 +24,7 @@ initArgs() {
 			"--node-red-route") set -- "$@" "-r" ;;
 			"--disable-editor") set -- "$@" "-q" ;;
 			"--node-red-http-middleware") set -- "$@" "-m";;
+			"--no-credential-split") set -- "$@" "-n";;
 			*) set -- "$@" "$arg" ;;
 		esac
 	done
@@ -39,8 +40,9 @@ initArgs() {
 
 	ENABLE_PROJECTS="true"
 	NODE_RED_DISABLE_EDITOR="false"
+	CREDENTIAL_SPLIT_FILES="true"
 
-	while getopts p:e:r:l:h:s:m:b:xqd option
+	while getopts p:e:r:l:h:s:m:b:xqdn option
 	do
 		case "$option" in
 			p) PORT="${OPTARG}";;
@@ -54,6 +56,7 @@ initArgs() {
 			x) ENABLE_PROJECTS="false";;
 			q) NODE_RED_DISABLE_EDITOR="true";;
 			m) NODE_RED_HTTP_MIDDLEWARE="${OPTARG}";;
+			n) CREDENTIAL_SPLIT_FILES="false";;
 	 		:)
 	      		echo "Option -$OPTARG requires an argument." >&2
 	      		exit 1
@@ -88,7 +91,7 @@ checkArgs() {
 	if [ -z "$APP" ] || [ -z "$ENV" ]
 	then
 
-		echo $red"Error - "$nocolor$bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --bot [ botfoldername ] --env [ dev|quali|prod ] [ --log-path pathtologs ] [ --credential-secret passphrase ] [ --disable-projects ] [ --disable-editor ] app"$normal
+		echo $red"Error - "$nocolor$bold"usage : bash start.sh [ -p port ] [ --url http://url ] [ --docker ] --bot [ botfoldername ] --env [ dev|quali|prod ] [ --log-path pathtologs ] [ --credential-secret passphrase ] [ --disable-projects ] [ --no-credential-split ] [ --disable-editor ] app"$normal
 		exit 1
 	fi
 }
@@ -124,7 +127,7 @@ fi
 
 cd "$BOT_ROOT"
 
-
+CREDENTIAL_SPLIT_FILES=$CREDENTIAL_SPLIT_FILES \
 ENABLE_PROJECTS=$ENABLE_PROJECTS \
 NODE_RED_HTTP_MIDDLEWARE="$NODE_RED_HTTP_MIDDLEWARE" \
 ROOT_DIR="$ROOT_DIR" \

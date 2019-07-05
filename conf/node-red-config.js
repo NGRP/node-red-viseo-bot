@@ -49,15 +49,18 @@ let defaultSettings = {
     settingsDir: process.env.ROOT_DIR
 };
 
+
 if(fs.existsSync(process.env.BOT_ROOT)) {
     defaultSettings.userDir = path.normalize(process.env.BOT_ROOT + '/data/');
 } else {
     defaultSettings.userDir = path.normalize(process.env.ROOT_DIR + '/data/');
 }
 
-if(enableProjects === false) {
+const splitCredentialFiles = ((process.env.CREDENTIAL_SPLIT_FILES || "true") === "true"); //credentials splitted by default
+if(enableProjects === false && splitCredentialFiles) { //if projects disabled, then file path is defined in package.json
     defaultSettings.credentialsFile = "flows_cred_"+process.env.NODE_ENV+".json";
 }
+
 
 defaultSettings = extend(defaultSettings, true, {
 

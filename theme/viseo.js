@@ -12,10 +12,7 @@ RED.events.on('nodes:add', function(node) {
 	}
 })
 
-/**
- * Add custom button to update the framework
- *
- **/
+
 RED.events.on('editor:open', function() {
 
 	setTimeout(function() {
@@ -24,6 +21,10 @@ RED.events.on('editor:open', function() {
 	}, 0);
 })
 
+/**
+ * Display catalogue as soon as the palette is open.
+ *
+ **/
 const customPalette = () => {
 	var $paletteDiv = $("#user-settings-tab-palette");
 	if($paletteDiv.length == 1) {
@@ -34,7 +35,10 @@ const customPalette = () => {
 
 }
 
-
+/**
+ * Add custom button to update the framework
+ *
+ **/
 const customDependency = () => {
 
 	var $dependenciesDiv = $("#project-settings-tab-deps");

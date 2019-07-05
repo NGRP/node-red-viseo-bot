@@ -26,6 +26,7 @@ if (argIgnored) {
     "-packagePath: path for the framework's 'package.json' file (default: ./package.json)\n",
     "-projectsDir: path for the folder that contains projects (default: ../projects/)\n",
     "-projectPackagePath: relative path for projects package.json files (default: data/package.json)");
+    process.exit(1);
 }
 
 // Get package.json content
@@ -86,4 +87,6 @@ for (let project of directories) {
             console.log('['+ project +']', 'Done!')
         }
     });
+
+    process.exit(0);
 }

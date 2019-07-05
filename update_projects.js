@@ -17,12 +17,12 @@ for (let i=2; i<process.argv.length-1; i+=2) {
             args['projectPackagePath'] = process.argv[i+1];
             continue;
     }
-    console.log("[IGNORED ARGUMENT] Unexpected argument "+ process.argv[i] + ".");
+    console.error("[IGNORED ARGUMENT] Unexpected argument "+ process.argv[i] + ".");
     argIgnored = true;
 }
 
 if (argIgnored) {
-    console.log("Use: node ./update_projects.js [-packagePath packagePathValue] [-projectsDir projectsDirValue] [-projectPackagePath projectPackagePathValue] \n",
+    console.error("Use: node ./update_projects.js [-packagePath packagePathValue] [-projectsDir projectsDirValue] [-projectPackagePath projectPackagePathValue] \n",
     "-packagePath: path for the framework's 'package.json' file (default: ./package.json)\n",
     "-projectsDir: path for the folder that contains projects (default: ../projects/)\n",
     "-projectPackagePath: relative path for projects package.json files (default: data/package.json)");
@@ -66,7 +66,7 @@ for (let project of directories) {
 
     // Write file
     writeFile(packagePath, JSON.stringify(packageJson, null, 2), function (err) {
-        if (err) console.log('['+ project +']', err);
+        if (err) console.error('['+ project +']', err);
     });
 
     // Update npm packages
@@ -76,6 +76,14 @@ for (let project of directories) {
     }
 
     console.log('['+ project +']', 'Updating...') 
-    exec("cd " + join(project, 'data') + "&& npm update", function(error, stdout, stderr) { console.log('>', stdout) });
-    console.log('['+ project +']', 'Done!') 
+    exec("cd " + join(project, 'data') + "&& npm update", function(error, stdout, stderr) { 
+        if (error) {
+            console.error(stderr)
+            console.log('['+ project +']', 'An error occured.')
+        }
+        else {
+            console.log(stdout)
+            console.log('['+ project +']', 'Done!')
+        }
+    });
 }

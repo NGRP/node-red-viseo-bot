@@ -23,6 +23,7 @@ const path   = require('path');
 const fs = require('fs');
 const dextend= require('deep-extend');
 
+
 const defaultUsers = [
     {
         "username": "demo",
@@ -52,6 +53,7 @@ let defaultSettings = {
 
 if(fs.existsSync(process.env.BOT_ROOT)) {
     defaultSettings.userDir = path.normalize(process.env.BOT_ROOT + '/data/');
+    process.chdir(process.env.BOT_ROOT);
 } else {
     defaultSettings.userDir = path.normalize(process.env.ROOT_DIR + '/data/');
 }

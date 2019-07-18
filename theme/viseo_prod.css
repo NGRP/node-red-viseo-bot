@@ -2,40 +2,190 @@
 	background-color: #CC0000;
 	color:#FFFFFF;
 }
-#header .button {
-	border-color: #8B0000;
-}
-#header #btn-deploy.disabled:hover,
-#header #btn-deploy.disabled {
-	background-color: #8B0000;
-	color:#eeeeee !important;
+
+#btn-deploy.disabled {
+	background: #792402;
 }
 
-#header a.deploy-button:hover,
-#header a.deploy-button {
-  background: #0088cc url("../deploy/v.png");
+a.deploy-button:hover,
+a.deploy-button {
+  background: #ff8a00  ;
   background-repeat: no-repeat;
-  padding-left: 20px;
+  padding: 4px 15px !important;
+  border-radius: 10px;
 }
 
-#header a.deploy-button
-#header a.deploy-button:hover{
-    background-color: #0066AA;
+a.deploy-button:hover{
+    background-color: #ff6600 ;
 }
 
-#header a.deploy-button img {
+a.deploy-button IMG {
     display: none;
 }
 
-#header span.deploy-button-content{
-    margin-left: 12px;
+span.logo     { 
+    margin-top: 0;
+}
+span.logo IMG { 
+    height: 40px;
+    margin-right: 10px;
 }
 
-#header span.logo     { margin-top: 0; }
-#header span.logo img { height: 40px;  }
-
-#header span.logo a:after {
-	content : " PROD ";
-	font-size:16px;
-	vertical-align: middle;
+/* Disable open project */
+#header .header-toolbar ul#menu-item-projects-menu-submenu li:nth-child(2) {
+	display: none;
 }
+
+#projects-dialog .projects-dialog-screen-create-type[data-type="open"] {
+	display:none;
+}
+
+#projects-dialog .projects-dialog-screen-create-type[data-type="empty"] {
+	border-left: 1px solid #ccc !important;
+}
+
+/* Palette */
+.palette_node {
+    border-radius: 15px;
+    border: 2px solid #eee;
+}
+
+.palette_icon_container {
+    border-right: 1px solid #eee;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+
+.palette_node:hover {
+    border-color: #ffb400;
+}
+
+.palette_icon_container_right {
+    border-left: 2px solid #eee;
+}
+
+.palette_port, .palette_node:hover > .palette_port {
+    background: #ccc;
+    border: 1px solid #eee;
+}
+
+/* Flow */
+
+.node {
+    stroke: #ddd;
+    stroke-width: 2;
+    rx: 15px;
+    ry: 15px;
+}
+
+rect.node_icon_shade {
+    rx: 15px;
+    ry: 15px;
+    stroke: #eee;
+    fill-opacity: 0.1;
+}
+
+path.node_icon_shade_border {
+    stroke: none;
+}
+
+rect.port {
+    stroke: #eee;
+    stroke-width: 1;
+    fill: #bbb;
+}
+
+path.link_line {
+    stroke: #bbb;
+}
+
+.group-box-active,
+.drag_line,
+.drag_line_hidden
+.port_hovered,
+.port_quick_link,
+.node_tools_hovered,
+.node_selected,
+.link_port,
+.lasso {
+    stroke: #ffb400 !important;
+}
+
+.node_selected,
+g.link_selected path.link_line
+ {
+    stroke: #ff6600 !important;
+}
+
+
+button.primary,
+.ui-dialog-buttonset button.primary,
+.palette-button.primary,
+#sidebar .button.primary,
+.sidebar-footer-button.primary,
+.sidebar-footer-button-toggle.primary,
+.sidebar-header-button.primary,
+.sidebar-header-button-toggle.primary,
+.workspace-footer-button.primary,
+.workspace-footer-button-toggle.primary,
+#workspace-toolbar .button.primary,
+.editor-tray-footer button.primary,
+.editor-tray-toolbar button.primary,
+.editor-tray-toolbar button.toggle.primary,
+.editor-tray-resize-button.primary,
+.editor-button.toggle.primary,
+.red-ui-tab-button a.primary,
+.red-ui-tab-link-buttons a.primary {
+    border-color: #ff8a00;
+    background: #ff8a00
+}
+
+button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.ui-dialog-buttonset button.primary:not(.disabled):hover,
+.palette-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+#sidebar .button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-footer-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-footer-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-header-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-header-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.workspace-footer-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.workspace-footer-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+#workspace-toolbar .button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-footer button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-toolbar button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-toolbar button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-resize-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.red-ui-tab-button a.primary:not(.disabled):not(.ui-button-disabled):hover,
+.red-ui-tab-link-buttons a.primary:not(.disabled):not(.ui-button-disabled):hover {
+    background: #ff6600 
+}
+
+.ui-dialog-buttonset button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.ui-dialog-buttonset button.primary:not(.disabled):hover,
+.palette-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+#sidebar .button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-footer-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-header-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.sidebar-header-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.workspace-footer-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.workspace-footer-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+#workspace-toolbar .button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-toolbar button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-toolbar button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-resize-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+.red-ui-tab-button a.primary:not(.disabled):not(.ui-button-disabled):hover,
+.red-ui-tab-link-buttons a.primary:not(.disabled):not(.ui-button-disabled):hover
+ {
+    border-color: #ff6600;
+    background: #ff6600 
+}
+
+/* 
+.debug-message-type-string, .debug-message-object-handle {
+    color:#ff8a00 !important
+}
+*/

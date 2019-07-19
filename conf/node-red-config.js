@@ -310,7 +310,7 @@ defaultSettings = extend(defaultSettings, true, {
         },
         projects: {
             enabled: enableProjects, // To enable the Projects feature, set this value to true
-            createDefaultFromZip: "https://github.com/NGRP/viseo-bot-template/archive/migration-nodered-0.18.zip",
+            createDefaultFromZip: "https://github.com/NGRP/viseo-bot-template/archive/v1.0.0.zip",
             packageDir: 'data/',
             activeProject: process.env.BOT
         },

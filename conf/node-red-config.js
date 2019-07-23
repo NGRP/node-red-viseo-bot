@@ -306,7 +306,7 @@ defaultSettings = extend(defaultSettings, true, {
     // https://github.com/node-red/node-red/wiki/Design%3A-Editor-Themes
     editorTheme: {
         palette: {
-            catalogues: ["https://raw.githubusercontent.com/NGRP/node-red-viseo-bot/installnodes-from-palette/package-catalog.json"]
+            catalogues: ["https://catalog.bot.viseo.io/"+require("../package.json").version+".json"]
         },
         projects: {
             enabled: enableProjects, // To enable the Projects feature, set this value to true

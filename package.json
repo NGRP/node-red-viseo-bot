@@ -1,6 +1,6 @@
 {
     "name": "node-red-viseo-bot",
-    "version": "1.0.0",
+    "version": "v1.0.0-alpha.1",
     "description": "A boilerplate for node-red-contrib-viseo",
     "dependencies": {
         "deep-extend": "~0.6.0",

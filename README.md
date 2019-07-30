@@ -51,8 +51,10 @@ The roadmap is available on [this GitHub Project](https://github.com/NGRP/node-r
 ## Developers
 ### Getting Started
 
-A documentation is available on [this GitHub Wiki](https://github.com/NGRP/node-red-contrib-bot/wiki).
-
+<p align="center">
+  <a href="https://key.bot.viseo.io/"><img src="https://raw.githubusercontent.com/wiki/NGRP/node-red-viseo-bot/img/doc/get_a_key.png" alt="get a key" width="20%"/></a>    
+  <a href="https://github.com/NGRP/node-red-viseo-bot/wiki"><img src="https://raw.githubusercontent.com/wiki/NGRP/node-red-viseo-bot/img/doc/get_started.png" alt="get started" width="20%"/></a>
+</p>
 
 ### Getting Help
 

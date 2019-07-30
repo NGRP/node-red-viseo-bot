@@ -1,6 +1,6 @@
 {
     "name": "node-red-viseo-bot",
-    "version": "1.0.0",
+    "version": "v1.0.0-alpha.1",
     "description": "A boilerplate for node-red-contrib-viseo",
     "dependencies": {
         "deep-extend": "~0.6.0",
@@ -24,7 +24,7 @@
         "node-red-contrib-viseo-random": "~0.4.0",
         "node-red-contrib-viseo-repeat": "~0.3.0",
         "node-red-contrib-viseo-tokenizer": "~0.3.0",
-        "node-red-viseo-bot-manager": "~0.0.0",
+        "node-red-viseo-bot-manager": "~0.1.0",
         "node-red-viseo-helper": "~0.3.0",
         "node-red-viseo-middleware": "~0.0.5",
         "node-red-viseo-storage-plugin": "~0.2.0",
@@ -84,7 +84,10 @@
         "maker",
         "vbm",
         "sarah",
+        "smart",
         "home",
+        "open",
+        "source",
         "chatbot",
         "vocal",
         "assistant",

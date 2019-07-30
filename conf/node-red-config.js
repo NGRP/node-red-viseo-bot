@@ -363,15 +363,93 @@ defaultSettings = extend(defaultSettings, true, {
       label: "Save"
     },
 
-    menu: {
-      "menu-item-import-library": false,
-      "menu-item-export-library": false,
-      "menu-item-keyboard-shortcuts": false,
-      "menu-item-help": {
-        label: process.env.BOT
-          ? process.env.BOT.replace(/[-_\.]/g, " ")
-          : "welcome !",
+    paletteCategories: [
+      "📻_channels",
+      "⚙️_bot_factory",
+      "🛠️_tools",
+      "function",
+      "input",
+      "output",
+      "💬_language",
+      "🖐️_channels_helpers",
+      "💾_data",
+      "📊_logs",
+      "🖼️_image",
+      "🔉_audio",
+      "🃏_miscellaneous"
+    ],
+
+    // https://github.com/node-red/node-red/issues/610
+    // https://github.com/node-red/node-red/wiki/Design%3A-Editor-Themes
+    editorTheme: {
+      palette: {
+        catalogues: [
+          "https://catalog.bot.viseo.io/" +
+            require("../package.json").version +
+            ".json"
+        ]
+      },
+      projects: {
+        enabled: enableProjects, // To enable the Projects feature, set this value to true
+        createDefaultFromZip:
+          "https://github.com/NGRP/viseo-bot-template/archive/v1.0.0.zip",
+        packageDir: "data/",
+        activeProject: process.env.BOT
+      },
+      page: {
+        title:
+          "VMB - " +
+          (process.env.BOT
+            ? process.env.BOT.replace(/[-_\.]/g, " ")
+            : "welcome !"),
+        favicon: path.normalize(
+          process.env.FRAMEWORK_ROOT + "/theme/favicon.ico"
+        ),
+        css: path.normalize(
+          process.env.FRAMEWORK_ROOT +
+            (process.env.NODE_ENV == "prod"
+              ? "/theme/viseo_prod.css"
+              : "/theme/viseo.css")
+        ),
+        scripts: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/viseo.js")
+      },
+      header: {
+        title:
+          (process.env.BOT
+            ? process.env.BOT.replace(/[-_\.]/g, " ")
+            : "welcome !") + (process.env.NODE_ENV == "prod" ? " [PROD]" : ""),
+        image: path.normalize(
+          process.env.FRAMEWORK_ROOT +
+            "/theme/logo_" +
+            (process.env.NODE_ENV === "prod" ? "prod" : "dev") +
+            ".png"
+        ),
         url: "https://bot.viseo.io"
+      },
+
+      deployButton: {
+        type: "simple",
+        label: "Save"
+      },
+
+      menu: {
+        "menu-item-import-library": false,
+        "menu-item-export-library": false,
+        "menu-item-keyboard-shortcuts": false,
+        "menu-item-help": {
+          label: process.env.BOT
+            ? process.env.BOT.replace(/[-_\.]/g, " ")
+            : "welcome !",
+          url: "https://bot.viseo.io"
+        }
+      },
+
+      userMenu: true,
+
+      login: {
+        image: path.normalize(
+          process.env.FRAMEWORK_ROOT + "/theme/viseo_login.png"
+        )
       }
     },
 

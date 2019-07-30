@@ -1,97 +1,98 @@
 a.deploy-button:hover,
 a.deploy-button {
-  background: #008CE8  ;
+  background: #008ce8;
   background-repeat: no-repeat;
   padding: 4px 15px !important;
   border-radius: 10px;
 }
 
-a.deploy-button:hover{
-    background-color: #0B5AA3 ;
+a.deploy-button:hover {
+  background-color: #0b5aa3;
 }
 
-a.deploy-button IMG {
-    display: none;
+a.deploy-button img {
+  display: none;
 }
 
-span.logo     { 
-    margin-top: 0;
+span.logo {
+  margin-top: 0;
 }
-span.logo IMG { 
-    height: 40px;
-    margin-right: 10px;
+span.logo img {
+  height: 40px;
+  margin-right: 10px;
 }
 
 /* Disable open project */
 #header .header-toolbar ul#menu-item-projects-menu-submenu li:nth-child(2) {
-	display: none;
+  display: none;
 }
 
 #projects-dialog .projects-dialog-screen-create-type[data-type="open"] {
-	display:none;
+  display: none;
 }
 
 #projects-dialog .projects-dialog-screen-create-type[data-type="empty"] {
-	border-left: 1px solid #ccc !important;
+  border-left: 1px solid #ccc !important;
 }
 
 /* Palette */
 .palette_node {
-    border-radius: 15px;
-    border: 2px solid #eee;
+  border-radius: 15px;
+  border: 2px solid #eee;
 }
 
 .palette_icon_container {
-    border-right: 1px solid #eee;
-    background-color: rgba(0,0,0,0.1);
-    border-radius: 15px;
+  border-right: 1px solid #eee;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
 }
 
 .palette_node:hover {
-    border-color: #66c2ff;
+  border-color: #66c2ff;
 }
 
 .palette_icon_container_right {
-    border-left: 2px solid #eee;
+  border-left: 2px solid #eee;
 }
 
-.palette_port, .palette_node:hover > .palette_port {
-    background: #ccc;
-    border: 1px solid #eee;
+.palette_port,
+.palette_node:hover > .palette_port {
+  background: #ccc;
+  border: 1px solid #eee;
 }
 
 /* Flow */
 
 .node {
-    stroke: #ddd;
-    stroke-width: 2;
-    rx: 15px;
-    ry: 15px;
+  stroke: #ddd;
+  stroke-width: 2;
+  rx: 15px;
+  ry: 15px;
 }
 
 rect.node_icon_shade {
-    rx: 15px;
-    ry: 15px;
-    stroke: #eee;
-    fill-opacity: 0.1;
+  rx: 15px;
+  ry: 15px;
+  stroke: #eee;
+  fill-opacity: 0.1;
 }
 
 path.node_icon_shade_border {
-    stroke: none;
+  stroke: none;
 }
 
 rect.port {
-    stroke: #eee;
-    stroke-width: 1;
-    fill: #bbb;
+  stroke: #eee;
+  stroke-width: 1;
+  fill: #bbb;
 }
 
 path.link_line {
-    stroke: #bbb;
+  stroke: #bbb;
 }
 
 .red-ui-tabs ul li {
-    border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 .group-box-active,
@@ -102,13 +103,13 @@ path.link_line {
 .node_tools_hovered,
 .link_port,
 .lasso {
-    stroke: #66c2ff !important;
+  stroke: #66c2ff !important;
 }
 
 .node_selected,
-g.link_selected path.link_line
- {
-    stroke: #008CE8 !important;
+.node.node_highlighted,
+g.link_selected path.link_line {
+  stroke: #008ce8 !important;
 }
 
 button.primary,
@@ -129,8 +130,8 @@ button.primary,
 .editor-button.toggle.primary,
 .red-ui-tab-button a.primary,
 .red-ui-tab-link-buttons a.primary {
-    border-color: #008CE8;
-    background: #008CE8
+  border-color: #008ce8;
+  background: #008ce8;
 }
 
 .deploy-button:hover,
@@ -144,20 +145,25 @@ button.primary:not(.disabled):not(.ui-button-disabled):hover,
 .sidebar-header-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
 .workspace-footer-button.primary:not(.disabled):not(.ui-button-disabled):hover,
 .workspace-footer-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
-#workspace-toolbar .button.primary:not(.disabled):not(.ui-button-disabled):hover,
-.editor-tray-footer button.primary:not(.disabled):not(.ui-button-disabled):hover,
-.editor-tray-toolbar button.primary:not(.disabled):not(.ui-button-disabled):hover,
-.editor-tray-toolbar button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+#workspace-toolbar
+  .button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-footer
+  button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-toolbar
+  button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-toolbar
+  button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
 .editor-tray-resize-button.primary:not(.disabled):not(.ui-button-disabled):hover,
 .editor-button.primary:not(.disabled):not(.ui-button-disabled):hover,
 .editor-button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
 .red-ui-tab-button a.primary:not(.disabled):not(.ui-button-disabled):hover,
-.red-ui-tab-link-buttons a.primary:not(.disabled):not(.ui-button-disabled):hover {
-    background: #0B5AA3 
+.red-ui-tab-link-buttons
+  a.primary:not(.disabled):not(.ui-button-disabled):hover {
+  background: #0b5aa3;
 }
 
-
-.ui-dialog-buttonset button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.ui-dialog-buttonset
+  button.primary:not(.disabled):not(.ui-button-disabled):hover,
 .ui-dialog-buttonset button.primary:not(.disabled):hover,
 .palette-button.primary:not(.disabled):not(.ui-button-disabled):hover,
 #sidebar .button.primary:not(.disabled):not(.ui-button-disabled):hover,
@@ -166,17 +172,20 @@ button.primary:not(.disabled):not(.ui-button-disabled):hover,
 .sidebar-header-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
 .workspace-footer-button.primary:not(.disabled):not(.ui-button-disabled):hover,
 .workspace-footer-button-toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
-#workspace-toolbar .button.primary:not(.disabled):not(.ui-button-disabled):hover,
-.editor-tray-toolbar button.primary:not(.disabled):not(.ui-button-disabled):hover,
-.editor-tray-toolbar button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
+#workspace-toolbar
+  .button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-toolbar
+  button.primary:not(.disabled):not(.ui-button-disabled):hover,
+.editor-tray-toolbar
+  button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
 .editor-tray-resize-button.primary:not(.disabled):not(.ui-button-disabled):hover,
 .editor-button.primary:not(.disabled):not(.ui-button-disabled):hover,
 .editor-button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
 .red-ui-tab-button a.primary:not(.disabled):not(.ui-button-disabled):hover,
-.red-ui-tab-link-buttons a.primary:not(.disabled):not(.ui-button-disabled):hover
- {
-    border-color: #0B5AA3;
-    background: #0B5AA3 
+.red-ui-tab-link-buttons
+  a.primary:not(.disabled):not(.ui-button-disabled):hover {
+  border-color: #0b5aa3;
+  background: #0b5aa3;
 }
 
 /* 

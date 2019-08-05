@@ -47,7 +47,7 @@
     "node-red-contrib-viseo-google-youtube": "~0.2.0",
     "node-red-contrib-viseo-iadvize": "~0.1.0",
     "node-red-contrib-viseo-inbenta": "~0.1.0",
-    "node-red-contrib-viseo-jimp": "~0.3.0",
+    "node-red-contrib-viseo-jimp": "~0.3.1",
     "node-red-contrib-viseo-log": "~0.4.0",
     "node-red-contrib-viseo-ms-authentication": "~0.0.2",
     "node-red-contrib-viseo-ms-decision": "~0.1.0",

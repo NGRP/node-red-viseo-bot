@@ -1,6 +1,6 @@
 {
   "name": "node-red-viseo-bot",
-  "version": "v1.0.0-alpha.4",
+  "version": "v1.0.0",
   "description": "A boilerplate for node-red-contrib-viseo",
   "dependencies": {
     "deep-extend": "~0.6.0",
@@ -26,7 +26,7 @@
     "node-red-contrib-viseo-tokenizer": "~0.3.0",
     "node-red-viseo-bot-manager": "~0.1.0",
     "node-red-viseo-helper": "~0.3.0",
-    "node-red-viseo-middleware": "~0.0.5",
+    "node-red-viseo-middleware": "~0.1.0",
     "node-red-viseo-storage-plugin": "~0.2.0",
     "uuid": "~3.1.0",
     "xmldom": "~0.1.27",
@@ -48,7 +48,7 @@
     "node-red-contrib-viseo-iadvize": "~0.1.0",
     "node-red-contrib-viseo-inbenta": "~0.1.0",
     "node-red-contrib-viseo-jimp": "~0.3.1",
-    "node-red-contrib-viseo-log": "~0.4.0",
+    "node-red-contrib-viseo-log": "~0.6.0",
     "node-red-contrib-viseo-ms-authentication": "~0.0.2",
     "node-red-contrib-viseo-ms-decision": "~0.1.0",
     "node-red-contrib-viseo-ms-graph": "~0.3.0",

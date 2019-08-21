@@ -68,19 +68,6 @@ if (enableProjects === false && splitCredentialFiles) {
 }
 
 defaultSettings = extend(defaultSettings, true, {
-  paletteCategories: [
-    "📻_channels",
-    "🖐️_channels_helpers",
-    "⚙️_bot_factory",
-    "🛠️_tools",
-    "💾_data",
-    "📊_logs",
-    "💬_language",
-    "🖼️_image",
-    "🔉_audio",
-    "🃏_miscellaneous"
-  ],
-
   // the tcp port that the Node-RED web server is listening on
   uiPort: process.env.PORT || 1880,
 
@@ -275,7 +262,21 @@ defaultSettings = extend(defaultSettings, true, {
   // palette. If a node's category is not in the list, the category will get
   // added to the end of the palette.
   // If not set, the following default order is used:
-  //paletteCategories: ['subflows', 'input', 'output', 'function', 'social', 'mobile', 'storage', 'analysis', 'advanced'],
+  paletteCategories: [
+    "📻_channels",
+    "⚙️_bot_factory",
+    "🛠️_tools",
+    "function",
+    "input",
+    "output",
+    "💬_language",
+    "🖐️_channels_helpers",
+    "💾_data",
+    "📊_logs",
+    "🖼️_image",
+    "🔉_audio",
+    "🃏_miscellaneous"
+  ],
 
   // Configure the logging output
   logging: {
@@ -296,34 +297,20 @@ defaultSettings = extend(defaultSettings, true, {
     }
   },
 
-  paletteCategories: [
-    "📻_channels",
-    "⚙️_bot_factory",
-    "🛠️_tools",
-    "function",
-    "input",
-    "output",
-    "💬_language",
-    "🖐️_channels_helpers",
-    "💾_data",
-    "📊_logs",
-    "🖼️_image",
-    "🔉_audio",
-    "🃏_miscellaneous"
-  ],
-
   // https://github.com/node-red/node-red/issues/610
   // https://github.com/node-red/node-red/wiki/Design%3A-Editor-Themes
   editorTheme: {
     palette: {
       catalogues: [
-        "https://raw.githubusercontent.com/NGRP/node-red-viseo-bot/installnodes-from-palette/package-catalog.json"
+        "https://catalog.bot.viseo.io/" +
+          require("../package.json").version +
+          ".json"
       ]
     },
     projects: {
       enabled: enableProjects, // To enable the Projects feature, set this value to true
       createDefaultFromZip:
-        "https://github.com/NGRP/viseo-bot-template/archive/migration-nodered-0.18.zip",
+        "https://github.com/NGRP/viseo-bot-template/archive/v1.0.0.zip",
       packageDir: "data/",
       activeProject: process.env.BOT
     },
@@ -363,93 +350,15 @@ defaultSettings = extend(defaultSettings, true, {
       label: "Save"
     },
 
-    paletteCategories: [
-      "📻_channels",
-      "⚙️_bot_factory",
-      "🛠️_tools",
-      "function",
-      "input",
-      "output",
-      "💬_language",
-      "🖐️_channels_helpers",
-      "💾_data",
-      "📊_logs",
-      "🖼️_image",
-      "🔉_audio",
-      "🃏_miscellaneous"
-    ],
-
-    // https://github.com/node-red/node-red/issues/610
-    // https://github.com/node-red/node-red/wiki/Design%3A-Editor-Themes
-    editorTheme: {
-      palette: {
-        catalogues: [
-          "https://catalog.bot.viseo.io/" +
-            require("../package.json").version +
-            ".json"
-        ]
-      },
-      projects: {
-        enabled: enableProjects, // To enable the Projects feature, set this value to true
-        createDefaultFromZip:
-          "https://github.com/NGRP/viseo-bot-template/archive/v1.0.0.zip",
-        packageDir: "data/",
-        activeProject: process.env.BOT
-      },
-      page: {
-        title:
-          "VMB - " +
-          (process.env.BOT
-            ? process.env.BOT.replace(/[-_\.]/g, " ")
-            : "welcome !"),
-        favicon: path.normalize(
-          process.env.FRAMEWORK_ROOT + "/theme/favicon.ico"
-        ),
-        css: path.normalize(
-          process.env.FRAMEWORK_ROOT +
-            (process.env.NODE_ENV == "prod"
-              ? "/theme/viseo_prod.css"
-              : "/theme/viseo.css")
-        ),
-        scripts: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/viseo.js")
-      },
-      header: {
-        title:
-          (process.env.BOT
-            ? process.env.BOT.replace(/[-_\.]/g, " ")
-            : "welcome !") + (process.env.NODE_ENV == "prod" ? " [PROD]" : ""),
-        image: path.normalize(
-          process.env.FRAMEWORK_ROOT +
-            "/theme/logo_" +
-            (process.env.NODE_ENV === "prod" ? "prod" : "dev") +
-            ".png"
-        ),
+    menu: {
+      "menu-item-import-library": false,
+      "menu-item-export-library": false,
+      "menu-item-keyboard-shortcuts": false,
+      "menu-item-help": {
+        label: process.env.BOT
+          ? process.env.BOT.replace(/[-_\.]/g, " ")
+          : "welcome !",
         url: "https://bot.viseo.io"
-      },
-
-      deployButton: {
-        type: "simple",
-        label: "Save"
-      },
-
-      menu: {
-        "menu-item-import-library": false,
-        "menu-item-export-library": false,
-        "menu-item-keyboard-shortcuts": false,
-        "menu-item-help": {
-          label: process.env.BOT
-            ? process.env.BOT.replace(/[-_\.]/g, " ")
-            : "welcome !",
-          url: "https://bot.viseo.io"
-        }
-      },
-
-      userMenu: true,
-
-      login: {
-        image: path.normalize(
-          process.env.FRAMEWORK_ROOT + "/theme/viseo_login.png"
-        )
       }
     },
 
@@ -460,6 +369,12 @@ defaultSettings = extend(defaultSettings, true, {
         process.env.FRAMEWORK_ROOT + "/theme/viseo_login.png"
       )
     }
+  },
+
+  userMenu: true,
+
+  login: {
+    image: path.normalize(process.env.FRAMEWORK_ROOT + "/theme/viseo_login.png")
   }
 });
 

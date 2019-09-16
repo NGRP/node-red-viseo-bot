@@ -1,6 +1,6 @@
 {
   "name": "node-red-viseo-bot",
-  "version": "v1.0.2",
+  "version": "v1.0.3",
   "description": "A boilerplate for node-red-contrib-viseo",
   "dependencies": {
     "deep-extend": "^0.6.0",
@@ -25,7 +25,7 @@
     "node-red-contrib-viseo-repeat": "0.3.0",
     "node-red-contrib-viseo-tokenizer": "0.3.0",
     "node-red-viseo-bot-manager": "0.1.0",
-    "node-red-viseo-helper": "0.3.0",
+    "node-red-viseo-helper": "0.3.1",
     "node-red-viseo-middleware": "0.1.0",
     "node-red-viseo-storage-plugin": "0.2.0",
     "uuid": "^3.1.0",

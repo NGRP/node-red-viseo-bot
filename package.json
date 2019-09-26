@@ -33,7 +33,7 @@
     "xpath": "^0.0.24"
   },
   "node-red-catalog": {
-    "node-red-contrib-viseo-airtable": "0.1.0",
+    "node-red-contrib-viseo-airtable": "0.1.1",
     "node-red-contrib-viseo-amazon": "0.2.0",
     "node-red-contrib-viseo-aws": "0.2.0",
     "node-red-contrib-viseo-bear": "0.3.0",

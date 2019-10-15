@@ -1,6 +1,6 @@
 {
   "name": "node-red-viseo-bot",
-  "version": "v1.0.4",
+  "version": "v1.0.5",
   "description": "A boilerplate for node-red-contrib-viseo",
   "dependencies": {
     "deep-extend": "^0.6.0",
@@ -26,14 +26,14 @@
     "node-red-contrib-viseo-tokenizer": "0.3.0",
     "node-red-viseo-bot-manager": "0.1.0",
     "node-red-viseo-helper": "0.3.1",
-    "node-red-viseo-middleware": "0.1.0",
+    "node-red-viseo-middleware": "0.2.0",
     "node-red-viseo-storage-plugin": "0.2.0",
     "uuid": "^3.1.0",
     "xmldom": "^0.1.27",
     "xpath": "^0.0.24"
   },
   "node-red-catalog": {
-    "node-red-contrib-viseo-airtable": "0.1.1",
+    "node-red-contrib-viseo-airtable": "0.1.2",
     "node-red-contrib-viseo-amazon": "0.2.0",
     "node-red-contrib-viseo-aws": "0.2.0",
     "node-red-contrib-viseo-bear": "0.3.0",

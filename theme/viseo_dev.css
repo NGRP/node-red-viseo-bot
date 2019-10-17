@@ -1,9 +1,4 @@
 /* Header */
-
-#red-ui-header {
-  background-color: #CC0000;
-}
-
 span.red-ui-header-logo {
   margin-top: 0 !important;
 }
@@ -14,7 +9,7 @@ span.red-ui-header-logo img {
 
 #red-ui-header-button-deploy:hover,
 #red-ui-header-button-deploy {
-  background: #ff6600  !important;
+  background: #008ce8  !important;
   background-repeat: no-repeat  !important;
   padding: 4px 15px !important;
   border-radius: 10px  !important;
@@ -22,7 +17,7 @@ span.red-ui-header-logo img {
 
 #red-ui-header-button-deploy:hover,
 #red-ui-header-button-deploy.disabled {
-  background-color: #792402  !important;
+  background-color: #0b5aa3  !important;
 }
 
 #red-ui-header-button-deploy img {
@@ -57,7 +52,7 @@ span.red-ui-header-logo img {
 }
 
 .red-ui-palette-node:hover {
-  box-shadow:0 0 0 2px #ff6600;
+  box-shadow:0 0 0 2px #008ce8;
 }
 
 
@@ -112,14 +107,14 @@ path.red-ui-flow-link-line {
 .red-ui-flow-drag-line,
 .red-ui-flow-link-group-active .red-ui-flow-link-port,
 {
-  stroke: #ffb400 !important;
+  stroke: #66c2ff !important;
 }
 
 g.red-ui-flow-node-selected .red-ui-flow-node,
 g.red-ui-flow-node-selected .red-ui-flow-subflow-port,
 .red-ui-flow-node-highlighted,
 g.red-ui-flow-link-selected path.red-ui-flow-link-line {
-  stroke: #ff6600 !important;
+  stroke: #008ce8 !important;
 }
 
 .ui-dialog-buttonset button.primary,
@@ -150,8 +145,8 @@ a.red-ui-button.toggle.primary,
 button.red-ui-button.toggle.primary,
 .red-ui-tab-button a.primary,
 .red-ui-tab-link-buttons a.primary{
-  border-color: #ff6600;
-  background: #ff6600;
+  border-color: #008ce8;
+  background: #008ce8;
 }
 
 
@@ -172,8 +167,8 @@ a.editor-button.primary:not(.disabled):not(.ui-button-disabled):hover,button.edi
 a.editor-button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,button.editor-button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,a.red-ui-button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,button.red-ui-button.toggle.primary:not(.disabled):not(.ui-button-disabled):hover,
 .red-ui-tab-button a.primary:not(.disabled):not(.ui-button-disabled):hover,
 .red-ui-tab-link-buttons a.primary:not(.disabled):not(.ui-button-disabled):hover {
-  border-color: #792402;
-  background: #792402;
+  border-color: #0b5aa3;
+  background: #0b5aa3;
 }
 
 

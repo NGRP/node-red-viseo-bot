@@ -5,7 +5,7 @@
   "dependencies": {
     "deep-extend": "^0.6.0",
     "moment-timezone": "^0.5.11",
-    "node-red": "^0.19.4",
+    "node-red": "1.0.0",
     "node-red-contrib-viseo-bot-message": "0.6.1",
     "node-red-contrib-viseo-bot-socketio": "0.2.2",
     "node-red-contrib-viseo-botbuilder": "0.9.0",

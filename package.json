@@ -55,7 +55,7 @@
     "node-red-contrib-viseo-ms-graph": "0.3.0",
     "node-red-contrib-viseo-ms-language": "0.1.0",
     "node-red-contrib-viseo-ms-search": "0.1.0",
-    "node-red-contrib-viseo-ms-speech": "0.1.0",
+    "node-red-contrib-viseo-ms-speech": "0.2.0",
     "node-red-contrib-viseo-ms-vision": "0.1.0",
     "node-red-contrib-viseo-nlp-js": "0.1.0",
     "node-red-contrib-viseo-qrcode": "0.3.0",

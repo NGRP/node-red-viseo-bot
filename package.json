@@ -14,7 +14,7 @@
     "node-red-contrib-viseo-botbuilder": "1.0.0-alpha.3",
     "node-red-contrib-viseo-credentials": "0.1.1",
     "node-red-contrib-viseo-dialogflow": "0.2.0",
-    "node-red-contrib-viseo-directline": "0.0.1-alpha.1",
+    "node-red-contrib-viseo-directline": "0.0.1-alpha.2",
     "node-red-contrib-viseo-facebook": "0.4.0",
     "node-red-contrib-viseo-file": "0.3.1",
     "node-red-contrib-viseo-google-authentication": "0.1.1",

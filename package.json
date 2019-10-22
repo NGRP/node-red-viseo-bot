@@ -18,7 +18,7 @@
     "node-red-contrib-viseo-file": "0.3.1",
     "node-red-contrib-viseo-google-authentication": "0.1.1",
     "node-red-contrib-viseo-google-spreadsheet": "0.4.1",
-    "node-red-contrib-viseo-help": "~1.0.0",
+    "node-red-contrib-viseo-help": "~1.0.1",
     "node-red-contrib-viseo-loop": "0.4.0",
     "node-red-contrib-viseo-mongodb": "0.5.0",
     "node-red-contrib-viseo-mustache": "0.1.0",

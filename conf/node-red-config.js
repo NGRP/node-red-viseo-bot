@@ -86,7 +86,7 @@ function handleBotDir(process) {
 function handleSplitCredFiles(variables) {
   let splitCredentialFiles = (variables.CREDENTIAL_SPLIT_FILES || "true") === "true";
   let enableProjects = (variables.ENABLE_PROJECTS || "true") === "true";
-  if (!enableProjects && splitCredentialFiles) {
+  if (enableProjects && splitCredentialFiles) {
     let credsFilePath =  "flows_cred_" + variables.NODE_ENV + ".json";
     return credsFilePath;
   }

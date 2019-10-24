@@ -11,7 +11,7 @@
     "xpath": "^0.0.24",
     "node-red-contrib-viseo-bot-message": "0.6.1",
     "node-red-contrib-viseo-bot-socketio": "0.2.2",
-    "node-red-contrib-viseo-botbuilder": "1.0.0-alpha.4",
+    "node-red-contrib-viseo-botbuilder": "1.0.0-alpha.5",
     "node-red-contrib-viseo-credentials": "0.1.1",
     "node-red-contrib-viseo-dialogflow": "0.2.0",
     "node-red-contrib-viseo-directline": "0.0.1-alpha.2",

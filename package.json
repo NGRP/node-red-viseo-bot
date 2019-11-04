@@ -1,6 +1,6 @@
 {
   "name": "node-red-viseo-bot",
-  "version": "v2.0.2",
+  "version": "v2.0.0",
   "description": "A boilerplate for node-red-contrib-viseo",
   "dependencies": {
     "node-red": "~1.0.2",
@@ -11,10 +11,10 @@
     "xpath": "^0.0.24",
     "node-red-contrib-viseo-bot-message": "0.6.1",
     "node-red-contrib-viseo-bot-socketio": "0.2.2",
-    "node-red-contrib-viseo-botbuilder": "1.0.0-alpha.5",
+    "node-red-contrib-viseo-botbuilder": "1.0.0",
     "node-red-contrib-viseo-credentials": "0.1.1",
     "node-red-contrib-viseo-dialogflow": "0.2.0",
-    "node-red-contrib-viseo-directline": "0.0.1-alpha.2",
+    "node-red-contrib-viseo-directline": "0.0.1",
     "node-red-contrib-viseo-facebook": "0.4.0",
     "node-red-contrib-viseo-file": "0.3.1",
     "node-red-contrib-viseo-google-authentication": "0.1.1",

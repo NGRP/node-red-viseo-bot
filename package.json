@@ -17,7 +17,7 @@
     "node-red-contrib-viseo-directline": "0.0.1",
     "node-red-contrib-viseo-facebook": "0.4.0",
     "node-red-contrib-viseo-file": "0.3.1",
-    "node-red-contrib-viseo-file-operation": "~1.0.2",
+    "node-red-contrib-viseo-file-operation": "~1.0.4",
     "node-red-contrib-viseo-google-authentication": "0.1.1",
     "node-red-contrib-viseo-google-spreadsheet": "~0.5.0",
     "node-red-contrib-viseo-help": "~1.0.1",

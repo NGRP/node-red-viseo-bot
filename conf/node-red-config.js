@@ -310,7 +310,7 @@ function getFinalSettings(env, defaultSettings) {
       const botSettings = require(env.NODE_RED_CONFIG_PATH);
 
       if (botSettings) {
-        return finalSettings = dextend(defaultSettings, botSettings);
+        return dextend(defaultSettings, botSettings);
       }
     }
     else {
